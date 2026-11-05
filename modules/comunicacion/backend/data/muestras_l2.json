@@ -1,0 +1,231 @@
+{
+  "schema_version": "1.0",
+  "nota": "Solo uso demostrativo. No implica aprobación docente.",
+  "actividades": [
+    {
+      "id": "DEMO-L2-4-A",
+      "plantilla_id": "COM-L2-infiere_intenciones",
+      "grado": 4,
+      "tipo": "seleccion",
+      "titulo": "La caja del salón",
+      "texto_base": "Durante el recreo, Tomás vio cuadernos tirados cerca de la puerta. Los recogió y los colocó en una caja para que nadie tropezara.",
+      "pregunta": "¿Por qué Tomás guardó los cuadernos en una caja?",
+      "opciones": [
+        "Para evitar que alguien tropezara",
+        "Para llevarlos a su casa",
+        "Para impedir que los usaran"
+      ],
+      "respuesta_correcta_indice": 0,
+      "cita_evidencia": "para que nadie tropezara",
+      "pistas": [
+        "Fíjate en qué peligro podía ocurrir cerca de la puerta.",
+        "Relee la última parte del relato."
+      ],
+      "estado_revision": "muestra_de_desarrollo_no_validada_docente",
+      "origen": "ejemplo_original_demostracion",
+      "capacidad_principal_id": "L2",
+      "competencia_id": "C08",
+      "mundo_id": "M1"
+    },
+    {
+      "id": "DEMO-L2-5-A",
+      "plantilla_id": "COM-L2-infiere_intenciones",
+      "grado": 5,
+      "tipo": "seleccion",
+      "titulo": "Cartel de la biblioteca",
+      "texto_base": "El equipo de aula vio que algunos libros se devolvían tarde. Colocó un cartel con recordatorios junto a la puerta y ofreció marcadores con la fecha de entrega.",
+      "pregunta": "¿Qué buscaba lograr el equipo de aula?",
+      "opciones": [
+        "Que nadie leyera libros",
+        "Que los libros fueran devueltos a tiempo",
+        "Que la biblioteca cerrara antes"
+      ],
+      "respuesta_correcta_indice": 1,
+      "cita_evidencia": "algunos libros se devolvían tarde",
+      "pistas": [
+        "Identifica el problema inicial.",
+        "Relaciona el cartel y los marcadores con la fecha de entrega."
+      ],
+      "estado_revision": "muestra_de_desarrollo_no_validada_docente",
+      "origen": "ejemplo_original_demostracion",
+      "capacidad_principal_id": "L2",
+      "competencia_id": "C08",
+      "mundo_id": "M1"
+    },
+    {
+      "id": "DEMO-L2-6-A",
+      "plantilla_id": "COM-L2-infiere_intenciones",
+      "grado": 6,
+      "tipo": "seleccion",
+      "titulo": "La asamblea",
+      "texto_base": "Antes de proponer un nuevo horario para los talleres, la delegada conversó con estudiantes de diferentes grados y anotó sus sugerencias. Quería presentar una propuesta que tomara en cuenta varias necesidades.",
+      "pregunta": "¿Por qué la delegada recogió distintas opiniones?",
+      "opciones": [
+        "Para presentar una propuesta representativa",
+        "Para evitar que hubiera talleres",
+        "Para elegir solo su propia preferencia"
+      ],
+      "respuesta_correcta_indice": 0,
+      "cita_evidencia": "tomara en cuenta varias necesidades",
+      "pistas": [
+        "Observa qué hizo antes de presentar la propuesta.",
+        "Identifica qué quería tener en cuenta."
+      ],
+      "estado_revision": "muestra_de_desarrollo_no_validada_docente",
+      "origen": "ejemplo_original_demostracion",
+      "capacidad_principal_id": "L2",
+      "competencia_id": "C08",
+      "mundo_id": "M1"
+    },
+    {
+      "id": "DEMO-L2-4-2",
+      "plantilla_id": "COM-L2-infiere_intenciones",
+      "grado": 4,
+      "tipo": "seleccion",
+      "titulo": "El aviso del recreo",
+      "texto_base": "Nora observó que el piso junto a la fuente estaba mojado. Colocó un aviso de cuidado y pidió a sus compañeros caminar despacio hasta que se secara.",
+      "pregunta": "¿Por qué Nora colocó el aviso?",
+      "opciones": [
+        "Para decorar el patio",
+        "Para prevenir caídas",
+        "Para cerrar el colegio"
+      ],
+      "respuesta_correcta_indice": 1,
+      "cita_evidencia": "el piso junto a la fuente estaba mojado",
+      "pistas": [
+        "Busca la acción que hizo el personaje después de notar el problema.",
+        "Observa qué situación quería cambiar o mejorar con esa acción."
+      ],
+      "competencia_id": "C08",
+      "capacidad_principal_id": "L2",
+      "mundo_id": "M1",
+      "estado_revision": "muestra_de_desarrollo_no_validada_docente",
+      "origen": "ejemplo_original_demostracion"
+    },
+    {
+      "id": "DEMO-L2-4-3",
+      "plantilla_id": "COM-L2-infiere_intenciones",
+      "grado": 4,
+      "tipo": "seleccion",
+      "titulo": "La nueva compañera",
+      "texto_base": "El primer día de clases, una niña nueva buscaba su salón. Camila le mostró el letrero del aula y caminó con ella hasta la puerta para que llegara sin confundirse.",
+      "pregunta": "¿Qué intención tuvo Camila al caminar con la niña?",
+      "opciones": [
+        "Acompañarla para orientarla",
+        "Salir antes de clase",
+        "Esconder el letrero"
+      ],
+      "respuesta_correcta_indice": 0,
+      "cita_evidencia": "para que llegara sin confundirse",
+      "pistas": [
+        "Busca la acción que hizo el personaje después de notar el problema.",
+        "Observa qué situación quería cambiar o mejorar con esa acción."
+      ],
+      "competencia_id": "C08",
+      "capacidad_principal_id": "L2",
+      "mundo_id": "M1",
+      "estado_revision": "muestra_de_desarrollo_no_validada_docente",
+      "origen": "ejemplo_original_demostracion"
+    },
+    {
+      "id": "DEMO-L2-5-4",
+      "plantilla_id": "COM-L2-infiere_intenciones",
+      "grado": 5,
+      "tipo": "seleccion",
+      "titulo": "Un libro para compartir",
+      "texto_base": "En el club de lectura quedaban pocos ejemplares de una historia. Manuel propuso que cada equipo leyera un capítulo en voz alta, así todos podrían participar sin esperar otro ejemplar.",
+      "pregunta": "¿Por qué Manuel propuso turnarse en la lectura?",
+      "opciones": [
+        "Para evitar que leyeran",
+        "Para que todos pudieran participar",
+        "Para suspender el club"
+      ],
+      "respuesta_correcta_indice": 1,
+      "cita_evidencia": "todos podrían participar sin esperar otro ejemplar",
+      "pistas": [
+        "Busca la acción que hizo el personaje después de notar el problema.",
+        "Observa qué situación quería cambiar o mejorar con esa acción."
+      ],
+      "competencia_id": "C08",
+      "capacidad_principal_id": "L2",
+      "mundo_id": "M1",
+      "estado_revision": "muestra_de_desarrollo_no_validada_docente",
+      "origen": "ejemplo_original_demostracion"
+    },
+    {
+      "id": "DEMO-L2-5-5",
+      "plantilla_id": "COM-L2-infiere_intenciones",
+      "grado": 5,
+      "tipo": "seleccion",
+      "titulo": "La reunión de vecinos",
+      "texto_base": "Durante la reunión, la profesora escuchó que varias familias tenían dudas sobre la campaña de reciclaje. Preparó un cartel con los horarios y puntos de recolección para que todos comprendieran cómo ayudar.",
+      "pregunta": "¿Qué buscaba la profesora al preparar el cartel?",
+      "opciones": [
+        "Aclarar cómo participar en la campaña",
+        "Cambiar la fecha de las vacaciones",
+        "Cerrar la escuela"
+      ],
+      "respuesta_correcta_indice": 0,
+      "cita_evidencia": "para que todos comprendieran cómo ayudar",
+      "pistas": [
+        "Busca la acción que hizo el personaje después de notar el problema.",
+        "Observa qué situación quería cambiar o mejorar con esa acción."
+      ],
+      "competencia_id": "C08",
+      "capacidad_principal_id": "L2",
+      "mundo_id": "M1",
+      "estado_revision": "muestra_de_desarrollo_no_validada_docente",
+      "origen": "ejemplo_original_demostracion"
+    },
+    {
+      "id": "DEMO-L2-6-6",
+      "plantilla_id": "COM-L2-infiere_intenciones",
+      "grado": 6,
+      "tipo": "seleccion",
+      "titulo": "Un comunicado responsable",
+      "texto_base": "En un grupo escolar circuló un mensaje alarmante sobre la suspensión de clases. Antes de reenviarlo, Rosa revisó el comunicado oficial de la dirección y encontró que la información era falsa. Avisó al grupo que no lo difundiera.",
+      "pregunta": "¿Por qué Rosa consultó el comunicado oficial?",
+      "opciones": [
+        "Para crear más rumores",
+        "Para comprobar la información antes de compartirla",
+        "Para cambiar las reglas"
+      ],
+      "respuesta_correcta_indice": 1,
+      "cita_evidencia": "Antes de reenviarlo, Rosa revisó el comunicado oficial",
+      "pistas": [
+        "Busca la acción que hizo el personaje después de notar el problema.",
+        "Observa qué situación quería cambiar o mejorar con esa acción."
+      ],
+      "competencia_id": "C08",
+      "capacidad_principal_id": "L2",
+      "mundo_id": "M1",
+      "estado_revision": "muestra_de_desarrollo_no_validada_docente",
+      "origen": "ejemplo_original_demostracion"
+    },
+    {
+      "id": "DEMO-L2-6-7",
+      "plantilla_id": "COM-L2-infiere_intenciones",
+      "grado": 6,
+      "tipo": "seleccion",
+      "titulo": "La propuesta del consejo",
+      "texto_base": "En el consejo estudiantil, Diego notó que los representantes tenían opiniones diferentes sobre el uso del patio. Propuso escuchar primero cada argumento y después votar una solución que considerara a todos los cursos.",
+      "pregunta": "¿Con qué propósito Diego propuso escuchar antes de votar?",
+      "opciones": [
+        "Para terminar la reunión sin decidir",
+        "Para que solo vote su curso",
+        "Para tomar una decisión informada e inclusiva"
+      ],
+      "respuesta_correcta_indice": 2,
+      "cita_evidencia": "una solución que considerara a todos los cursos",
+      "pistas": [
+        "Busca la acción que hizo el personaje después de notar el problema.",
+        "Observa qué situación quería cambiar o mejorar con esa acción."
+      ],
+      "competencia_id": "C08",
+      "capacidad_principal_id": "L2",
+      "mundo_id": "M1",
+      "estado_revision": "muestra_de_desarrollo_no_validada_docente",
+      "origen": "ejemplo_original_demostracion"
+    }
+  ]
+}

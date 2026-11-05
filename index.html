@@ -26,11 +26,12 @@
           <input id="regColegio" required maxlength="80" placeholder="Ej: I.E. San Agustín"></label>
         <label><span class="lab">Tu grado</span>
           <select id="regGrado">
+            <option value="4.° grado">4.° grado</option>
             <option value="5.° grado">5.° grado</option>
             <option value="6.° grado">6.° grado</option>
           </select></label>
-        <label><span class="lab">Clave de IA: OpenRouter o Gemini <small>(opcional ahora; la puedes poner luego en Configuración)</small></span>
-          <input id="regKey" type="password" placeholder="sk-or-... o AQ...."></label>
+        <input id="regKey" type="hidden" value="">
+        <p class="fine">Demostración: usa un nombre y colegio ficticios. IA mediante servidor local.</p>
         <button class="btn primary big" type="submit">Empezar</button>
       </form>
       <p class="fine">Tus datos se quedan solo en este navegador.</p>

@@ -60,62 +60,15 @@ const MistyAI = (() => {
     return resto;
   }
 
-  async function stream(o) {
-    if (o.proveedor === "gemini") return streamGemini(o);
-    const body = { model: o.model, messages: ajustar(o.model, o.messages), stream: true,
-      temperature: o.temperature == null ? 0.6 : o.temperature, max_tokens: o.maxTokens || 700 };
-    let res;
-    try {
-      res = await fetch(URL_API, { method: "POST", headers: cabeceras(o.key), body: JSON.stringify(body), signal: o.signal });
-    } catch (e) {
-      if (e.name === "AbortError") throw e;
-      throw new Error("No hay conexión con OpenRouter. Revisa tu internet.");
-    }
-    if (!res.ok) throw await errorDe(res);
-
-    const reader = res.body.getReader();
-    const dec = new TextDecoder();
-    let buf = "", full = "";
-    for (;;) {
-      const { done, value } = await reader.read();
-      if (done) break;
-      buf += dec.decode(value, { stream: true });
-      let i;
-      while ((i = buf.indexOf("\n")) >= 0) {
-        const linea = buf.slice(0, i).trim();
-        buf = buf.slice(i + 1);
-        if (!linea || linea.startsWith(":") || !linea.startsWith("data:")) continue;
-        const data = linea.slice(5).trim();
-        if (data === "[DONE]") return full;
-        let j;
-        try { j = JSON.parse(data); } catch (e) { continue; }
-        if (j.error) throw new Error(j.error.message || "Error del modelo");
-        const d = j.choices && j.choices[0] && j.choices[0].delta && j.choices[0].delta.content;
-        if (d) { full += d; if (o.onToken) o.onToken(d); }
-      }
-    }
-    return full;
+  async function proxy(o) {
+    const ctx=window.mistiContext?.() || {grado:4};
+    const res=await fetch('/api/misti/modelo',{method:'POST',headers:{'Content-Type':'application/json'},signal:o.signal,body:JSON.stringify({messages:o.messages,max_tokens:o.maxTokens,...ctx})});
+    const d=await res.json();if(!res.ok)throw Error(d.error || 'Servidor no disponible');return d;
   }
+  async function stream(o) {const d=await proxy(o);const t=(d.modo==='ia'?'':'Modo de respaldo sin IA. ')+d.texto;if(o.onToken)o.onToken(t);return t;}
 
   // Respuesta completa (sin streaming), para JSON.
-  async function complete(o) {
-    if (o.proveedor === "gemini") return completeGemini(o);
-    const body = { model: o.model, messages: ajustar(o.model, o.messages),
-      temperature: o.temperature == null ? 0.4 : o.temperature, max_tokens: o.maxTokens || 1800 };
-    let res;
-    try {
-      res = await fetch(URL_API, { method: "POST", headers: cabeceras(o.key), body: JSON.stringify(body), signal: o.signal });
-    } catch (e) {
-      if (e.name === "AbortError") throw e;
-      throw new Error("No hay conexión con OpenRouter. Revisa tu internet.");
-    }
-    if (!res.ok) throw await errorDe(res);
-    const j = await res.json();
-    if (j.error) throw new Error(j.error.message || "Error del modelo");
-    const txt = j.choices && j.choices[0] && j.choices[0].message && j.choices[0].message.content;
-    if (!txt) throw new Error("La IA respondió vacío.");
-    return txt;
-  }
+  async function complete(o) {const d=await proxy(o);if(d.modo!=='ia')throw Error('Modo de respaldo: la generación de rutas necesita IA. Comunicación tiene actividades locales disponibles.');return d.texto;}
 
   /* ---------------- Gemini (API nativa) ----------------
    * Las claves nuevas "AQ." funcionan con este endpoint y la cabecera x-goog-api-key;

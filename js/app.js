@@ -47,6 +47,8 @@
       const d = JSON.parse(raw), b = porDefecto();
       S = Object.assign({}, b, d);
       S.config = Object.assign({}, b.config, d.config);
+      S.config.key=""; S.config.keyGemini="";
+      localStorage.setItem(LS_KEY, JSON.stringify(S));
       S.stats = Object.assign({}, b.stats, d.stats);
       S.puntos = Object.assign({}, b.puntos, d.puntos);
       S.racha = Object.assign({}, b.racha, d.racha);
@@ -58,6 +60,7 @@
   }
   let avisoCuota = false;
   function guardar() {
+    S.config.key = ""; S.config.keyGemini = "";
     if (S.historial.length > 80) S.historial = S.historial.slice(-80);
     try { localStorage.setItem(LS_KEY, JSON.stringify(S)); }
     catch (e) { if (!avisoCuota) { avisoCuota = true; toast("No pude guardar tu progreso (almacenamiento lleno).", "error"); } }
@@ -263,12 +266,7 @@
     ? { proveedor: "gemini", nombre: "Gemini", key: S.config.keyGemini, modelo: S.config.modeloGemini, vision: S.config.modeloGemini }
     : { proveedor: "openrouter", nombre: "OpenRouter", key: S.config.key, modelo: S.config.modelo, vision: S.config.modeloVision };
 
-  function requiereClave() {
-    if (prov().key) return true;
-    addMsg("misty", "Necesito tu clave de " + prov().nombre + " para poder pensar. Pégala en Configuración.", { noGuardar: true, error: true });
-    abrirConfig();
-    return false;
-  }
+  function requiereClave() { return true; }
 
   let ocupado = false, abortCtl = null;
   function setEnviando(b) {
@@ -453,6 +451,7 @@
   }
 
   async function crearRuta(o) {
+    if (o.area === "Comunicación" || /comunicaci[oó]n/i.test(o.tema || "")) return rutaComunicacion();
     if (ocupado) return;
     setEnviando(true);
     registrarActividad();
@@ -675,11 +674,58 @@
     return cuerpo;
   }
 
+
+  let comunicacionActual = null;
+  window.mistiContext = () => ({grado: parseInt(S.perfil?.grado || '4'), id:comunicacionActual || ''});
+  async function apiCom(path, body) {
+    const res=await fetch('/api/misti/'+path, body ? {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)} : {});
+    const data=await res.json(); if(!res.ok) throw Error(data.error || 'No se pudo conectar'); return data;
+  }
+  async function rutaComunicacion() {
+    if(ocupado)return;setEnviando(true);
+    try {
+      const grado=parseInt(S.perfil.grado); const nodos=[];
+      for(let j=0;j<3;j++) {
+        const d=await apiCom('actividad?grado='+grado+'&capacidad=L2&exclude='+encodeURIComponent(nodos.at(-1)?.comunicacionId || ''));
+        const a=d.actividad;
+        if(nodos.some(n=>n.comunicacionId===a.id))continue;
+        nodos.push({titulo:a.titulo,leccion:a.texto_base,pregunta:a.pregunta,opciones:a.opciones,comunicacionId:a.id,estado:nodos.length?'bloqueado':'activo'});
+      }
+      const r={id:'com-'+Date.now(),tema:'Leemos con Misti',area:'Comunicación',competencia:AREAS['Comunicación'].competencias[1] || AREAS['Comunicación'].competencias[0],nodos,completada:false,grado};
+      S.rutas.push(r);S.rutaActiva=r.id;guardar();setModo('guia',true);renderRuta();abrirNodo(0);
+    }catch(e){addMsg('misty',e.message,{error:true});}finally{setEnviando(false);}
+  }
+  function abrirComunicacion(r,i) {
+    const n=r.nodos[i];comunicacionActual=n.comunicacionId;
+    const c=hojaBase(i/r.nodos.length*100,'Comunicación · '+r.grado+'.º');
+    c.append(el('h3','',n.titulo),pEl(n.leccion,'leccion'),pEl(n.pregunta,'pregunta'));
+    const {cont,btns}=opcionesUI(n), fb=el('div','feedback'), acc=el('div','acciones');c.append(cont,fb,acc);
+    let busy=false,nivel=0;
+    const hint=el('button','btn','Pista');hint.onclick=async()=>{if(busy)return;busy=true;try{const d=await apiCom('pista?id='+encodeURIComponent(n.comunicacionId)+'&nivel='+Math.min(2,++nivel));fb.textContent=d.pista;addMsg('misty',d.pista);decir(d.pista);}catch(e){fb.textContent=e.message;}finally{busy=false;}};acc.append(hint);
+    const ayuda=el('button','btn','Preguntar a Misti');ayuda.onclick=()=>{finHoja();setModo('tutor');addMsg('misty','Cuéntame qué parte del texto te cuesta. Puedes volver al paso desde Mi ruta.');};acc.append(ayuda);
+    btns.forEach((b,k)=>b.onclick=async()=>{
+      if(busy || n.estado==='hecho')return;busy=true;
+      try{
+        const d=await apiCom('responder',{id:n.comunicacionId,opcion:k});
+        S.comIntentos=S.comIntentos||[];S.comIntentos.push({id:n.comunicacionId,opcion:k,correcta:d.correcta,fecha:Date.now()});S.comIntentos=S.comIntentos.slice(-500);guardar();
+        fb.textContent=d.mensaje;addMsg('misty',d.mensaje);decir(d.mensaje);animo(d.correcta?'happy':'sad',1500);
+        if(d.correcta){
+          S.comPremios=S.comPremios||{};
+          if(!S.comPremios[n.comunicacionId]){S.comPremios[n.comunicacionId]=true;completarNodo(r,i);}else{n.estado='hecho';if(r.nodos[i+1])r.nodos[i+1].estado='activo';r.completada=r.nodos.every(x=>x.estado==='hecho');guardar();renderRuta();}
+          btns.forEach(x=>x.disabled=true);if(gato)gato.jump();
+          const next=el('button','btn primary','Continuar');next.onclick=()=>{if(r.nodos[i+1])abrirNodo(i+1);else finHoja();};acc.append(next);
+        }
+      }catch(e){fb.textContent=e.message;}finally{busy=false;}
+    });
+  }
+
   function abrirNodo(i) {
     const r = rutaActual();
     if (!r) return;
     const n = r.nodos[i];
     if (!n || n.estado === "bloqueado") return;
+    if (n.comunicacionId) return abrirComunicacion(r, i);
+    comunicacionActual=null;
     const repaso = n.estado === "hecho";
     const c = hojaBase(i / r.nodos.length * 100, "Paso " + (i + 1) + " de " + r.nodos.length);
     c.append(el("h3", "", n.titulo));
@@ -756,6 +802,7 @@
 
   /* ---------- diagnóstico ---------- */
   async function iniciarDiagnostico(area) {
+    if (area === "Comunicación") return rutaComunicacion();
     if (ocupado || !requiereClave()) return;
     setEnviando(true);
     registrarActividad();
@@ -1054,6 +1101,7 @@
         fila.append(mini);
         card.append(fila);
       });
+      if(a === "Comunicación") { const bt=el("button","btn primary","Practicar Comunicación"); bt.onclick=()=>{cerrarModal();rutaComunicacion();};card.append(bt); }
       w.append(card);
     });
     abrirModal("Áreas y competencias", w);
@@ -1066,7 +1114,7 @@
     const nombre = campo("Nombre", el("input")); nombre.value = S.perfil.nombre; nombre.maxLength = 40;
     const cole = campo("Colegio", el("input")); cole.value = S.perfil.institucion; cole.maxLength = 80;
     const grado = campo("Grado", el("select"));
-    ["5.° grado", "6.° grado"].forEach((g) => { const o = el("option", "", g); o.value = g; if (g === S.perfil.grado) o.selected = true; grado.append(o); });
+    ["4.° grado", "5.° grado", "6.° grado"].forEach((g) => { const o = el("option", "", g); o.value = g; if (g === S.perfil.grado) o.selected = true; grado.append(o); });
     const gu = el("button", "btn primary", "Guardar cambios");
     gu.type = "button";
     gu.onclick = () => {
@@ -1098,29 +1146,7 @@
       l.append(i, document.createTextNode(lab)); f.append(l); return i;
     };
 
-    const selProv = campo("Proveedor de IA", el("select"));
-    [["openrouter", "OpenRouter (modelos gratuitos :free)"], ["gemini", "Google Gemini (AI Studio)"]].forEach(([v, n]) => {
-      const o = el("option", "", n); o.value = v; if (c.proveedor === v) o.selected = true; selProv.append(o);
-    });
-    selProv.onchange = () => { c.proveedor = selProv.value; guardar(); abrirConfig(); };
-
-    if (c.proveedor === "gemini") {
-      const kg = campo("Clave de Gemini", el("input"), "Se guarda solo en este navegador. Las claves nuevas empiezan con AQ. y las antiguas con AIza.");
-      kg.type = "password"; kg.value = c.keyGemini; kg.placeholder = "AQ...."; kg.autocomplete = "off";
-      kg.oninput = () => { c.keyGemini = kg.value.trim(); guardar(); };
-      check("Mostrar la clave", false, (v) => { kg.type = v ? "text" : "password"; });
-      const mg = campo("Modelo de Gemini (sirve para texto y fotos)", el("input"), "Prueba con gemini-3.8-flash. Si falla, usa gemini-2.5-flash. Lista en ai.google.dev/gemini-api/docs/models.");
-      mg.value = c.modeloGemini; mg.oninput = () => { c.modeloGemini = mg.value.trim(); guardar(); };
-    } else {
-      const key = campo("Clave de OpenRouter", el("input"), "Se guarda solo en este navegador. No la escribas en el código ni la subas a GitHub.");
-      key.type = "password"; key.value = c.key; key.placeholder = "sk-or-..."; key.autocomplete = "off";
-      key.oninput = () => { c.key = key.value.trim(); guardar(); };
-      check("Mostrar la clave", false, (v) => { key.type = v ? "text" : "password"; });
-      const mod = campo("Modelo de texto", el("input"), "Los modelos gratuitos terminan en :free y cambian seguido. Puedes usar openrouter/free. Lista en openrouter.ai/models.");
-      mod.value = c.modelo; mod.oninput = () => { c.modelo = mod.value.trim(); guardar(); };
-      const modV = campo("Modelo con fotos (visión)", el("input"), "Tiene que aceptar imágenes como entrada (filtro en openrouter.ai/models).");
-      modV.value = c.modeloVision; modV.oninput = () => { c.modeloVision = modV.value.trim(); guardar(); };
-    }
+    f.append(el("p", "nota", "IA conectada por el servidor local. Las claves se configuran solo en PowerShell."));
     check("Leer las fotos con OCR en vez de visión (Tesseract.js, en el navegador)", c.ocr, (v) => { c.ocr = v; });
     check("Ahorrar solicitudes: clasificar los puntos con palabras clave, sin la segunda llamada a la IA", c.ahorrar, (v) => { c.ahorrar = v; });
     f.append(el("hr", "sep"));

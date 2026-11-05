@@ -1,0 +1,609 @@
+{
+  "schema_version": "1.0.0",
+  "proyecto": "synaps3du · Misti Comunicación",
+  "base_curricular": "modules/comunicacion/data/matriz_curricular.json",
+  "nota": "Plantillas originales propuestas; no son desempeños oficiales transcritos. Requieren revisión docente antes de uso con niños.",
+  "reglas": {
+    "solo_4_5_6_primaria": true,
+    "salida_ia_en_revision": true,
+    "no_calificar_texto_abierto_solo_con_ia": true,
+    "escucha_requiere_audio_real": true,
+    "oralidad_requiere_evidencia_de_voz_para_algunas_capacidades": true,
+    "no_copiar_textos_protegidos": true,
+    "no_enviar_datos_de_menores_a_api": true
+  },
+  "plantillas": [
+    {
+      "id": "COM-L1-localiza_informacion",
+      "version": "1.0.0",
+      "estado": "propuesta_pendiente_revision_docente",
+      "mundo_id": "M1",
+      "competencia_id": "C08",
+      "capacidad_principal_id": "L1",
+      "capacidades_secundarias_posibles": [],
+      "tipo": "seleccion",
+      "objetivo_de_la_plantilla": "Obtener un dato expresamente indicado en un texto narrativo o informativo.",
+      "contexto_de_generacion": "texto escrito original de contexto escolar con datos localizables",
+      "por_grado": {
+        "4": {
+          "ciclo": "IV",
+          "objetivo_propuesto": "Ubicar datos explícitos en avisos y textos breves",
+          "evidencia_sugerida": "Datos localizados con referencia a su fragmento"
+        },
+        "5": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Seleccionar información explícita de distintas partes de un texto",
+          "evidencia_sugerida": "Tabla con evidencias textuales correctas"
+        },
+        "6": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Integrar información de varias secciones del mismo texto",
+          "evidencia_sugerida": "Síntesis de datos de distintas secciones"
+        }
+      },
+      "restricciones": {
+        "idioma": "es-PE",
+        "nombres_ficticios": true,
+        "no_pedir_datos_personales": true,
+        "tema_apto_para_menores": true,
+        "contextos": "escuela, familia ficticia o comunidad peruana",
+        "complejidad_acorde_al_grado": true,
+        "variar_situacion_y_razonamiento": true,
+        "evitar_copiar_textos_de_libros": true
+      },
+      "criterios_revision_humana": [
+        "La consigna permite observar la capacidad principal.",
+        "El vocabulario y la complejidad son adecuados para el grado.",
+        "No contiene información peligrosa, privada ni prejuicios.",
+        "La retroalimentación no revela prematuramente el resultado."
+      ]
+    },
+    {
+      "id": "COM-L2-infiere_intenciones",
+      "version": "1.0.0",
+      "estado": "propuesta_pendiente_revision_docente",
+      "mundo_id": "M1",
+      "competencia_id": "C08",
+      "capacidad_principal_id": "L2",
+      "capacidades_secundarias_posibles": [],
+      "tipo": "seleccion",
+      "objetivo_de_la_plantilla": "Inferir una intención o causa a partir de acciones concretas descritas en un texto.",
+      "contexto_de_generacion": "relato original con indicios suficientes y una inferencia defendible",
+      "por_grado": {
+        "4": {
+          "ciclo": "IV",
+          "objetivo_propuesto": "Inferir causas o intenciones usando indicios del texto",
+          "evidencia_sugerida": "Inferencia respaldada por una frase o hecho del relato"
+        },
+        "5": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Interpretar motivaciones, relaciones y tema global",
+          "evidencia_sugerida": "Explicación que une indicios y conclusión"
+        },
+        "6": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Interpretar puntos de vista e información implícita",
+          "evidencia_sugerida": "Interpretación argumentada con evidencia textual"
+        }
+      },
+      "restricciones": {
+        "idioma": "es-PE",
+        "nombres_ficticios": true,
+        "no_pedir_datos_personales": true,
+        "tema_apto_para_menores": true,
+        "contextos": "escuela, familia ficticia o comunidad peruana",
+        "complejidad_acorde_al_grado": true,
+        "variar_situacion_y_razonamiento": true,
+        "evitar_copiar_textos_de_libros": true
+      },
+      "criterios_revision_humana": [
+        "La consigna permite observar la capacidad principal.",
+        "El vocabulario y la complejidad son adecuados para el grado.",
+        "No contiene información peligrosa, privada ni prejuicios.",
+        "La retroalimentación no revela prematuramente el resultado."
+      ]
+    },
+    {
+      "id": "COM-L3-analiza_proposito",
+      "version": "1.0.0",
+      "estado": "propuesta_pendiente_revision_docente",
+      "mundo_id": "M1",
+      "competencia_id": "C08",
+      "capacidad_principal_id": "L3",
+      "capacidades_secundarias_posibles": [
+        "L2"
+      ],
+      "tipo": "seleccion",
+      "objetivo_de_la_plantilla": "Examinar el propósito comunicativo de un afiche o anuncio y justificarlo con un indicio textual.",
+      "contexto_de_generacion": "afiche verbal original de campaña escolar con destinatario claro",
+      "por_grado": {
+        "4": {
+          "ciclo": "IV",
+          "objetivo_propuesto": "Opinar sobre la utilidad de un texto y justificarlo",
+          "evidencia_sugerida": "Opinión justificada con un elemento del texto"
+        },
+        "5": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Explicar cómo los recursos del texto apoyan su intención",
+          "evidencia_sugerida": "Justifica la eficacia de un recurso textual"
+        },
+        "6": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Evaluar confiabilidad e intención de mensajes escritos",
+          "evidencia_sugerida": "Valoración razonada de evidencia y propósito"
+        }
+      },
+      "restricciones": {
+        "idioma": "es-PE",
+        "nombres_ficticios": true,
+        "no_pedir_datos_personales": true,
+        "tema_apto_para_menores": true,
+        "contextos": "escuela, familia ficticia o comunidad peruana",
+        "complejidad_acorde_al_grado": true,
+        "variar_situacion_y_razonamiento": true,
+        "evitar_copiar_textos_de_libros": true
+      },
+      "criterios_revision_humana": [
+        "La consigna permite observar la capacidad principal.",
+        "El vocabulario y la complejidad son adecuados para el grado.",
+        "No contiene información peligrosa, privada ni prejuicios.",
+        "La retroalimentación no revela prematuramente el resultado."
+      ]
+    },
+    {
+      "id": "COM-E1-escribe_para_destinatario",
+      "version": "1.0.0",
+      "estado": "propuesta_pendiente_revision_docente",
+      "mundo_id": "M3",
+      "competencia_id": "C09",
+      "capacidad_principal_id": "E1",
+      "capacidades_secundarias_posibles": [],
+      "tipo": "escritura",
+      "objetivo_de_la_plantilla": "Redactar un mensaje adecuado a su destinatario, propósito y situación.",
+      "contexto_de_generacion": "situación auténtica de comunicación para carta, anuncio o mensaje",
+      "por_grado": {
+        "4": {
+          "ciclo": "IV",
+          "objetivo_propuesto": "Seleccionar propósito, destinatario y tono de una carta",
+          "evidencia_sugerida": "Plan con destinatario, intención y tipo de texto"
+        },
+        "5": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Elegir formato y registro adecuados a una situación",
+          "evidencia_sugerida": "Plan que justifica formato, destinatario y registro"
+        },
+        "6": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Ajustar formato, registro y fuentes a un público concreto",
+          "evidencia_sugerida": "Plan con propósito, audiencia y sustento pertinente"
+        }
+      },
+      "restricciones": {
+        "idioma": "es-PE",
+        "nombres_ficticios": true,
+        "no_pedir_datos_personales": true,
+        "tema_apto_para_menores": true,
+        "contextos": "escuela, familia ficticia o comunidad peruana",
+        "complejidad_acorde_al_grado": true,
+        "variar_situacion_y_razonamiento": true,
+        "evitar_copiar_textos_de_libros": true
+      },
+      "criterios_revision_humana": [
+        "La consigna permite observar la capacidad principal.",
+        "El vocabulario y la complejidad son adecuados para el grado.",
+        "No contiene información peligrosa, privada ni prejuicios.",
+        "La retroalimentación no revela prematuramente el resultado."
+      ]
+    },
+    {
+      "id": "COM-E2-organiza_relato",
+      "version": "1.0.0",
+      "estado": "propuesta_pendiente_revision_docente",
+      "mundo_id": "M3",
+      "competencia_id": "C09",
+      "capacidad_principal_id": "E2",
+      "capacidades_secundarias_posibles": [
+        "E1",
+        "E3"
+      ],
+      "tipo": "escritura",
+      "objetivo_de_la_plantilla": "Organizar y escribir un relato coherente con inicio, desarrollo y cierre.",
+      "contexto_de_generacion": "situación original que admite soluciones creativas",
+      "por_grado": {
+        "4": {
+          "ciclo": "IV",
+          "objetivo_propuesto": "Escribir texto breve con inicio, desarrollo y cierre",
+          "evidencia_sugerida": "Borrador con secuencia lógica y conectores básicos"
+        },
+        "5": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Construir párrafos vinculados mediante conectores pertinentes",
+          "evidencia_sugerida": "Párrafos ordenados y relaciones entre ideas"
+        },
+        "6": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Desarrollar texto argumentativo con razones y conclusión",
+          "evidencia_sugerida": "Texto con tesis, argumentos pertinentes y cierre"
+        }
+      },
+      "restricciones": {
+        "idioma": "es-PE",
+        "nombres_ficticios": true,
+        "no_pedir_datos_personales": true,
+        "tema_apto_para_menores": true,
+        "contextos": "escuela, familia ficticia o comunidad peruana",
+        "complejidad_acorde_al_grado": true,
+        "variar_situacion_y_razonamiento": true,
+        "evitar_copiar_textos_de_libros": true
+      },
+      "criterios_revision_humana": [
+        "La consigna permite observar la capacidad principal.",
+        "El vocabulario y la complejidad son adecuados para el grado.",
+        "No contiene información peligrosa, privada ni prejuicios.",
+        "La retroalimentación no revela prematuramente el resultado."
+      ]
+    },
+    {
+      "id": "COM-E3-revisa_convenciones",
+      "version": "1.0.0",
+      "estado": "propuesta_pendiente_revision_docente",
+      "mundo_id": "M3",
+      "competencia_id": "C09",
+      "capacidad_principal_id": "E3",
+      "capacidades_secundarias_posibles": [],
+      "tipo": "escritura",
+      "objetivo_de_la_plantilla": "Redactar y revisar un párrafo utilizando convenciones de puntuación y ortografía pertinentes.",
+      "contexto_de_generacion": "borrador propio breve con oportunidades de revisión",
+      "por_grado": {
+        "4": {
+          "ciclo": "IV",
+          "objetivo_propuesto": "Revisar puntuación y claridad en un texto breve",
+          "evidencia_sugerida": "Versión corregida y explicación de algunas correcciones"
+        },
+        "5": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Aplicar recursos ortográficos y conectores para dar claridad",
+          "evidencia_sugerida": "Borrador editado con justificación de cambios"
+        },
+        "6": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Revisar puntuación, cohesión y elecciones léxicas según propósito",
+          "evidencia_sugerida": "Texto revisado con cambios pertinentes y explicación"
+        }
+      },
+      "restricciones": {
+        "idioma": "es-PE",
+        "nombres_ficticios": true,
+        "no_pedir_datos_personales": true,
+        "tema_apto_para_menores": true,
+        "contextos": "escuela, familia ficticia o comunidad peruana",
+        "complejidad_acorde_al_grado": true,
+        "variar_situacion_y_razonamiento": true,
+        "evitar_copiar_textos_de_libros": true
+      },
+      "criterios_revision_humana": [
+        "La consigna permite observar la capacidad principal.",
+        "El vocabulario y la complejidad son adecuados para el grado.",
+        "No contiene información peligrosa, privada ni prejuicios.",
+        "La retroalimentación no revela prematuramente el resultado."
+      ]
+    },
+    {
+      "id": "COM-E4-revisa_su_texto",
+      "version": "1.0.0",
+      "estado": "propuesta_pendiente_revision_docente",
+      "mundo_id": "M3",
+      "competencia_id": "C09",
+      "capacidad_principal_id": "E4",
+      "capacidades_secundarias_posibles": [],
+      "tipo": "escritura",
+      "objetivo_de_la_plantilla": "Revisar un texto propio atendiendo a claridad, destinatario y coherencia.",
+      "contexto_de_generacion": "texto original con propósito de revisión explícito",
+      "por_grado": {
+        "4": {
+          "ciclo": "IV",
+          "objetivo_propuesto": "Comprobar si el texto cumple el propósito y mejorarlo",
+          "evidencia_sugerida": "Borrador inicial, lista de cotejo y versión revisada"
+        },
+        "5": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Evaluar coherencia y adecuación al destinatario",
+          "evidencia_sugerida": "Comparación de borradores con cambios razonados"
+        },
+        "6": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Evaluar el efecto de su texto y revisar argumentos y lenguaje",
+          "evidencia_sugerida": "Autoevaluación razonada y segunda versión"
+        }
+      },
+      "restricciones": {
+        "idioma": "es-PE",
+        "nombres_ficticios": true,
+        "no_pedir_datos_personales": true,
+        "tema_apto_para_menores": true,
+        "contextos": "escuela, familia ficticia o comunidad peruana",
+        "complejidad_acorde_al_grado": true,
+        "variar_situacion_y_razonamiento": true,
+        "evitar_copiar_textos_de_libros": true
+      },
+      "criterios_revision_humana": [
+        "La consigna permite observar la capacidad principal.",
+        "El vocabulario y la complejidad son adecuados para el grado.",
+        "No contiene información peligrosa, privada ni prejuicios.",
+        "La retroalimentación no revela prematuramente el resultado."
+      ]
+    },
+    {
+      "id": "COM-O1-escucha_datos",
+      "version": "1.0.0",
+      "estado": "propuesta_pendiente_revision_docente",
+      "mundo_id": "M2",
+      "competencia_id": "C07",
+      "capacidad_principal_id": "O1",
+      "capacidades_secundarias_posibles": [],
+      "tipo": "escucha",
+      "objetivo_de_la_plantilla": "Recuperar información explícita de un mensaje oral escuchado.",
+      "contexto_de_generacion": "guion breve de anuncio oral escolar; requiere audio real en producción",
+      "por_grado": {
+        "4": {
+          "ciclo": "IV",
+          "objetivo_propuesto": "Reconocer datos explícitos de una narración escuchada",
+          "evidencia_sugerida": "Identifica y recupera información que sí aparece en el audio"
+        },
+        "5": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Seleccionar datos relevantes de una entrevista oral",
+          "evidencia_sugerida": "Selecciona datos relevantes y distingue los principales"
+        },
+        "6": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Recuperar y organizar información específica de una exposición",
+          "evidencia_sugerida": "Integra información explícita de distintos momentos del audio"
+        }
+      },
+      "restricciones": {
+        "idioma": "es-PE",
+        "nombres_ficticios": true,
+        "no_pedir_datos_personales": true,
+        "tema_apto_para_menores": true,
+        "contextos": "escuela, familia ficticia o comunidad peruana",
+        "complejidad_acorde_al_grado": true,
+        "variar_situacion_y_razonamiento": true,
+        "evitar_copiar_textos_de_libros": true
+      },
+      "criterios_revision_humana": [
+        "La consigna permite observar la capacidad principal.",
+        "El vocabulario y la complejidad son adecuados para el grado.",
+        "No contiene información peligrosa, privada ni prejuicios.",
+        "La retroalimentación no revela prematuramente el resultado."
+      ]
+    },
+    {
+      "id": "COM-O2-interpreta_voz",
+      "version": "1.0.0",
+      "estado": "propuesta_pendiente_revision_docente",
+      "mundo_id": "M2",
+      "competencia_id": "C07",
+      "capacidad_principal_id": "O2",
+      "capacidades_secundarias_posibles": [],
+      "tipo": "escucha",
+      "objetivo_de_la_plantilla": "Interpretar intención o consecuencia de un mensaje oral a partir de pistas auditivas.",
+      "contexto_de_generacion": "guion original para entrevista o conversación; requiere audio real en producción",
+      "por_grado": {
+        "4": {
+          "ciclo": "IV",
+          "objetivo_propuesto": "Inferir intenciones y emociones desde pistas de un diálogo",
+          "evidencia_sugerida": "Explica la inferencia indicando la pista del audio"
+        },
+        "5": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Relacionar causas y consecuencias en un mensaje oral",
+          "evidencia_sugerida": "Justifica su inferencia con detalles oídos"
+        },
+        "6": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Interpretar un propósito y un punto de vista en una entrevista",
+          "evidencia_sugerida": "Sustenta una interpretación con indicios del mensaje"
+        }
+      },
+      "restricciones": {
+        "idioma": "es-PE",
+        "nombres_ficticios": true,
+        "no_pedir_datos_personales": true,
+        "tema_apto_para_menores": true,
+        "contextos": "escuela, familia ficticia o comunidad peruana",
+        "complejidad_acorde_al_grado": true,
+        "variar_situacion_y_razonamiento": true,
+        "evitar_copiar_textos_de_libros": true
+      },
+      "criterios_revision_humana": [
+        "La consigna permite observar la capacidad principal.",
+        "El vocabulario y la complejidad son adecuados para el grado.",
+        "No contiene información peligrosa, privada ni prejuicios.",
+        "La retroalimentación no revela prematuramente el resultado."
+      ]
+    },
+    {
+      "id": "COM-O3-organiza_exposicion",
+      "version": "1.0.0",
+      "estado": "propuesta_pendiente_revision_docente",
+      "mundo_id": "M4",
+      "competencia_id": "C07",
+      "capacidad_principal_id": "O3",
+      "capacidades_secundarias_posibles": [],
+      "tipo": "oralidad",
+      "objetivo_de_la_plantilla": "Organizar una exposición oral breve y clara con un propósito definido.",
+      "contexto_de_generacion": "situación para explicar una propuesta escolar",
+      "por_grado": {
+        "4": {
+          "ciclo": "IV",
+          "objetivo_propuesto": "Exponer oralmente ideas ordenadas con inicio, desarrollo y cierre",
+          "evidencia_sugerida": "Guion o registro de presentación organizado"
+        },
+        "5": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Organizar una exposición con ideas principales y conectores",
+          "evidencia_sugerida": "Guion y presentación con secuencia reconocible"
+        },
+        "6": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Argumentar oralmente una propuesta con razones y conclusión",
+          "evidencia_sugerida": "Argumentación estructurada con razones pertinentes"
+        }
+      },
+      "restricciones": {
+        "idioma": "es-PE",
+        "nombres_ficticios": true,
+        "no_pedir_datos_personales": true,
+        "tema_apto_para_menores": true,
+        "contextos": "escuela, familia ficticia o comunidad peruana",
+        "complejidad_acorde_al_grado": true,
+        "variar_situacion_y_razonamiento": true,
+        "evitar_copiar_textos_de_libros": true
+      },
+      "criterios_revision_humana": [
+        "La consigna permite observar la capacidad principal.",
+        "El vocabulario y la complejidad son adecuados para el grado.",
+        "No contiene información peligrosa, privada ni prejuicios.",
+        "La retroalimentación no revela prematuramente el resultado."
+      ]
+    },
+    {
+      "id": "COM-O4-voz_y_gestos",
+      "version": "1.0.0",
+      "estado": "propuesta_pendiente_revision_docente",
+      "mundo_id": "M4",
+      "competencia_id": "C07",
+      "capacidad_principal_id": "O4",
+      "capacidades_secundarias_posibles": [],
+      "tipo": "oralidad",
+      "objetivo_de_la_plantilla": "Practicar pausas, volumen, entonación y gestos adecuados al propósito comunicativo.",
+      "contexto_de_generacion": "presentación oral breve ante compañeros",
+      "por_grado": {
+        "4": {
+          "ciclo": "IV",
+          "objetivo_propuesto": "Reconocer cuándo el volumen y los gestos apoyan el mensaje",
+          "evidencia_sugerida": "Autoevaluación guiada sobre claridad, pausas y gestos"
+        },
+        "5": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Emplear pausas, entonación y gestos acordes al mensaje",
+          "evidencia_sugerida": "Registro de autoevaluación y observación del docente"
+        },
+        "6": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Elegir recursos expresivos adecuados al público y propósito",
+          "evidencia_sugerida": "Lista de cotejo de recursos expresivos y devolución humana"
+        }
+      },
+      "restricciones": {
+        "idioma": "es-PE",
+        "nombres_ficticios": true,
+        "no_pedir_datos_personales": true,
+        "tema_apto_para_menores": true,
+        "contextos": "escuela, familia ficticia o comunidad peruana",
+        "complejidad_acorde_al_grado": true,
+        "variar_situacion_y_razonamiento": true,
+        "evitar_copiar_textos_de_libros": true
+      },
+      "criterios_revision_humana": [
+        "La consigna permite observar la capacidad principal.",
+        "El vocabulario y la complejidad son adecuados para el grado.",
+        "No contiene información peligrosa, privada ni prejuicios.",
+        "La retroalimentación no revela prematuramente el resultado."
+      ]
+    },
+    {
+      "id": "COM-O5-dialoga_con_respeto",
+      "version": "1.0.0",
+      "estado": "propuesta_pendiente_revision_docente",
+      "mundo_id": "M4",
+      "competencia_id": "C07",
+      "capacidad_principal_id": "O5",
+      "capacidades_secundarias_posibles": [
+        "O3"
+      ],
+      "tipo": "oralidad",
+      "objetivo_de_la_plantilla": "Participar en un diálogo, escuchar y responder con respeto a otro interlocutor.",
+      "contexto_de_generacion": "situación con dos posturas de convivencia escolar",
+      "por_grado": {
+        "4": {
+          "ciclo": "IV",
+          "objetivo_propuesto": "Formular preguntas y responder respetando turnos",
+          "evidencia_sugerida": "Preguntas pertinentes y respuestas conectadas"
+        },
+        "5": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Escuchar, repreguntar y aportar al tema",
+          "evidencia_sugerida": "Intervenciones que retoman lo dicho por otro"
+        },
+        "6": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Sostener diálogo con argumentos y preguntas oportunas",
+          "evidencia_sugerida": "Intervenciones respetuosas, pertinentes y con seguimiento"
+        }
+      },
+      "restricciones": {
+        "idioma": "es-PE",
+        "nombres_ficticios": true,
+        "no_pedir_datos_personales": true,
+        "tema_apto_para_menores": true,
+        "contextos": "escuela, familia ficticia o comunidad peruana",
+        "complejidad_acorde_al_grado": true,
+        "variar_situacion_y_razonamiento": true,
+        "evitar_copiar_textos_de_libros": true
+      },
+      "criterios_revision_humana": [
+        "La consigna permite observar la capacidad principal.",
+        "El vocabulario y la complejidad son adecuados para el grado.",
+        "No contiene información peligrosa, privada ni prejuicios.",
+        "La retroalimentación no revela prematuramente el resultado."
+      ]
+    },
+    {
+      "id": "COM-O6-reflexiona_sobre_voz",
+      "version": "1.0.0",
+      "estado": "propuesta_pendiente_revision_docente",
+      "mundo_id": "M4",
+      "competencia_id": "C07",
+      "capacidad_principal_id": "O6",
+      "capacidades_secundarias_posibles": [],
+      "tipo": "oralidad",
+      "objetivo_de_la_plantilla": "Reflexionar sobre la claridad, organización y adecuación de un mensaje oral.",
+      "contexto_de_generacion": "autoevaluación orientada sobre presentación propia",
+      "por_grado": {
+        "4": {
+          "ciclo": "IV",
+          "objetivo_propuesto": "Dar opinión razonada sobre un mensaje escuchado",
+          "evidencia_sugerida": "Opinión con una razón asociada al propósito"
+        },
+        "5": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Evaluar claridad y pertinencia de una intervención oral",
+          "evidencia_sugerida": "Justificación sobre claridad, propósito y recursos utilizados"
+        },
+        "6": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Analizar la eficacia de un mensaje para su destinatario",
+          "evidencia_sugerida": "Comentario sustentado sobre contenido, forma y audiencia"
+        }
+      },
+      "restricciones": {
+        "idioma": "es-PE",
+        "nombres_ficticios": true,
+        "no_pedir_datos_personales": true,
+        "tema_apto_para_menores": true,
+        "contextos": "escuela, familia ficticia o comunidad peruana",
+        "complejidad_acorde_al_grado": true,
+        "variar_situacion_y_razonamiento": true,
+        "evitar_copiar_textos_de_libros": true
+      },
+      "criterios_revision_humana": [
+        "La consigna permite observar la capacidad principal.",
+        "El vocabulario y la complejidad son adecuados para el grado.",
+        "No contiene información peligrosa, privada ni prejuicios.",
+        "La retroalimentación no revela prematuramente el resultado."
+      ]
+    }
+  ]
+}
