@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SYNAPS3DU · Guía para 4°, 5° y 6° de primaria</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===== Mascota MISTI (SVG reutilizable) ===== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <pattern id="rayas" width="24" height="24" patternUnits="userSpaceOnUse" patternTransform="rotate(20)">
+        <rect width="6" height="24" fill="#E8553E"/>
+        <rect x="6" width="6" height="24" fill="#F5B83D"/>
+        <rect x="12" width="6" height="24" fill="#5BB36A"/>
+        <rect x="18" width="6" height="24" fill="#5B8DEF"/>
+      </pattern>
+    </defs>
+    <symbol id="misti" viewBox="0 0 200 200">
+      <!-- orejas -->
+      <polygon points="38,88 52,18 98,58" fill="#E9A23B" stroke="#6B3E1E" stroke-width="4" stroke-linejoin="round"/>
+      <polygon points="162,88 148,18 102,58" fill="#E9A23B" stroke="#6B3E1E" stroke-width="4" stroke-linejoin="round"/>
+      <polygon points="50,74 57,36 84,60" fill="#F4A6A0"/>
+      <polygon points="150,74 143,36 116,60" fill="#F4A6A0"/>
+      <!-- bufanda trasera -->
+      <ellipse cx="100" cy="172" rx="62" ry="20" fill="url(#rayas)"/>
+      <!-- cabeza -->
+      <ellipse cx="100" cy="106" rx="72" ry="62" fill="#F3B64A"/>
+      <ellipse cx="100" cy="136" rx="42" ry="28" fill="#FFF1D6"/>
+      <!-- manchas -->
+      <ellipse cx="100" cy="58" rx="5" ry="10" fill="#8B5A2B"/>
+      <ellipse cx="84" cy="62" rx="4" ry="8" fill="#8B5A2B" transform="rotate(-15 84 62)"/>
+      <ellipse cx="116" cy="62" rx="4" ry="8" fill="#8B5A2B" transform="rotate(15 116 62)"/>
+      <ellipse cx="62" cy="76" rx="9" ry="4" fill="#8B5A2B" transform="rotate(-20 62 76)"/>
+      <ellipse cx="138" cy="76" rx="9" ry="4" fill="#8B5A2B" transform="rotate(20 138 76)"/>
+      <ellipse cx="40" cy="118" rx="10" ry="4" fill="#8B5A2B" transform="rotate(-25 40 118)"/>
+      <ellipse cx="160" cy="118" rx="10" ry="4" fill="#8B5A2B" transform="rotate(25 160 118)"/>
+      <!-- ojos -->
+      <ellipse cx="72" cy="104" rx="17" ry="19" fill="#fff"/>
+      <ellipse cx="128" cy="104" rx="17" ry="19" fill="#fff"/>
+      <circle cx="73" cy="106" r="13" fill="#5E9C4A"/>
+      <circle cx="127" cy="106" r="13" fill="#5E9C4A"/>
+      <circle cx="73" cy="107" r="9" fill="#1E1E1E"/>
+      <circle cx="127" cy="107" r="9" fill="#1E1E1E"/>
+      <circle cx="77" cy="102" r="3.5" fill="#fff"/>
+      <circle cx="131" cy="102" r="3.5" fill="#fff"/>
+      <!-- nariz y boca -->
+      <path d="M92 126 L108 126 L100 135 Z" fill="#F08A8A"/>
+      <path d="M100 135 Q100 142 90 144" stroke="#6B3E1E" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M100 135 Q100 142 110 144" stroke="#6B3E1E" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M90 146 Q100 158 110 146 Z" fill="#7A2E2E"/>
+      <!-- bigotes -->
+      <g stroke="#6B3E1E" stroke-width="2" stroke-linecap="round">
+        <line x1="62" y1="132" x2="30" y2="126"/><line x1="62" y1="138" x2="30" y2="142"/>
+        <line x1="138" y1="132" x2="170" y2="126"/><line x1="138" y1="138" x2="170" y2="142"/>
+      </g>
+      <!-- bufanda delantera -->
+      <path d="M44 160 Q100 190 156 160 L158 176 Q100 204 42 176 Z" fill="url(#rayas)" stroke="#6B3E1E" stroke-width="3"/>
+    </symbol>
+  </svg>
+
+  <div class="app">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+      <div class="logo">SYNAPS<span>3</span>DU</div>
+
+      <div class="perfil">
+        <div class="avatar"><img src="img/misti-cara.png" alt="Misti"></div>
+        <h3>Explorador(a)</h3>
+        <p>Estudiante</p>
+      </div>
+
+      <nav>
+        <p class="nav-titulo">APRENDER</p>
+        <a href="#inicio" class="activo">🏠 Inicio</a>
+        <a href="#cursos">📚 Mis cursos</a>
+        <a href="#retos">🧩 Retos</a>
+        <a href="#logros">🏆 Logros</a>
+        <a href="#areas">🎒 Áreas</a>
+
+        <p class="nav-titulo">CUENTA</p>
+        <a href="#">👤 Perfil</a>
+        <a href="#">⚙️ Ajustes</a>
+        <a href="#">💬 Ayuda</a>
+      </nav>
+
+      <a href="#" class="salir">🚪 Salir</a>
+    </aside>
+
+    <!-- ===== CONTENIDO PRINCIPAL ===== -->
+    <main class="principal">
+
+      <header class="barra" id="inicio">
+        <h2>Panel</h2>
+        <input type="search" placeholder="🔍 Buscar un tema...">
+      </header>
+
+      <!-- Saludo + Misti -->
+      <section class="saludo">
+        <h1>¡Hola, explorador!</h1>
+        <div class="misti-mini"><img src="img/misti-cara.png" alt="Misti"></div>
+        <div class="burbuja">¡Llevas <b>5 días</b> seguidos! 🔥 Soy <b>Misti</b> y hoy aprendemos juntos.</div>
+      </section>
+
+      <!-- Estadísticas -->
+      <section class="stats">
+        <div class="stat amarillo"><strong>1 320 XP</strong><span>Puntos</span><i>⭐</i></div>
+        <div class="stat azul"><strong>Aprendiz</strong><span>Tu nivel</span><i>💎</i></div>
+        <div class="stat naranja"><strong>5 días</strong><span>Racha</span><i>🔥</i></div>
+        <div class="stat rosa"><strong>#4</strong><span>Puesto</span><i>🏅</i></div>
+      </section>
+
+      <!-- Selector de grado (solo CSS) -->
+      <section class="grados" id="cursos">
+        <input type="radio" name="grado" id="g4" checked>
+        <input type="radio" name="grado" id="g5">
+        <input type="radio" name="grado" id="g6">
+
+        <div class="tabs">
+          <label for="g4">4° grado</label>
+          <label for="g5">5° grado</label>
+          <label for="g6">6° grado</label>
+        </div>
+
+        <div class="paneles">
+
+          <!-- 4° -->
+          <div class="panel p4">
+            <div class="tablero">
+              <div class="tablero-top">
+                <span class="volver">←</span>
+                <h3>Matemática · 4° grado</h3>
+              </div>
+              <div class="continuar">
+                <span class="ico">✖️</span>
+                <span>Multiplicación</span>
+                <a href="#" class="btn-amarillo">Continuar aventura →</a>
+              </div>
+              <p class="cap-titulo">Capítulos</p>
+              <div class="capitulos">
+                <a href="#" class="cap morado"><h4>Suma</h4><b>+</b></a>
+                <a href="#" class="cap verde"><h4>Resta</h4><b>−</b></a>
+                <a href="#" class="cap rosado"><h4>Multiplicación</h4><b>×</b></a>
+                <a href="#" class="cap celeste"><h4>División</h4><b>÷</b></a>
+                <a href="#" class="cap turquesa"><h4>Fracciones</h4><b>½</b></a>
+              </div>
+            </div>
+            <div class="progreso">
+              <div class="prog-item"><span>Módulo 3 de 5</span><div class="barra-prog"><i style="width:60%"></i></div><small>60% completado</small></div>
+              <div class="prog-item"><span>Progreso total</span><div class="barra-prog"><i style="width:45%"></i></div><small>45% completado</small></div>
+            </div>
+          </div>
+
+          <!-- 5° -->
+          <div class="panel p5">
+            <div class="tablero">
+              <div class="tablero-top">
+                <span class="volver">←</span>
+                <h3>Matemática · 5° grado</h3>
+              </div>
+              <div class="continuar">
+                <span class="ico">🔢</span>
+                <span>Decimales</span>
+                <a href="#" class="btn-amarillo">Continuar aventura →</a>
+              </div>
+              <p class="cap-titulo">Capítulos</p>
+              <div class="capitulos">
+                <a href="#" class="cap morado"><h4>Fracciones</h4><b>¾</b></a>
+                <a href="#" class="cap verde"><h4>Decimales</h4><b>0,5</b></a>
+                <a href="#" class="cap rosado"><h4>Geometría</h4><b>△</b></a>
+                <a href="#" class="cap celeste"><h4>Medidas</h4><b>📏</b></a>
+                <a href="#" class="cap turquesa"><h4>Estadística</h4><b>📊</b></a>
+              </div>
+            </div>
+            <div class="progreso">
+              <div class="prog-item"><span>Módulo 2 de 5</span><div class="barra-prog"><i style="width:40%"></i></div><small>40% completado</small></div>
+              <div class="prog-item"><span>Progreso total</span><div class="barra-prog"><i style="width:30%"></i></div><small>30% completado</small></div>
+            </div>
+          </div>
+
+          <!-- 6° -->
+          <div class="panel p6">
+            <div class="tablero">
+              <div class="tablero-top">
+                <span class="volver">←</span>
+                <h3>Matemática · 6° grado</h3>
+              </div>
+              <div class="continuar">
+                <span class="ico">%</span>
+                <span>Porcentajes</span>
+                <a href="#" class="btn-amarillo">Continuar aventura →</a>
+              </div>
+              <p class="cap-titulo">Capítulos</p>
+              <div class="capitulos">
+                <a href="#" class="cap morado"><h4>Porcentajes</h4><b>%</b></a>
+                <a href="#" class="cap verde"><h4>Proporciones</h4><b>⚖️</b></a>
+                <a href="#" class="cap rosado"><h4>Potencias</h4><b>x²</b></a>
+                <a href="#" class="cap celeste"><h4>Área y volumen</h4><b>🧊</b></a>
+                <a href="#" class="cap turquesa"><h4>Probabilidad</h4><b>🎲</b></a>
+              </div>
+            </div>
+            <div class="progreso">
+              <div class="prog-item"><span>Módulo 1 de 5</span><div class="barra-prog"><i style="width:20%"></i></div><small>20% completado</small></div>
+              <div class="prog-item"><span>Progreso total</span><div class="barra-prog"><i style="width:15%"></i></div><small>15% completado</small></div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Reto + Eficiencia -->
+      <section class="fila2" id="retos">
+        <div class="tarjeta reto">
+          <h3>Reto de hoy</h3>
+          <p>Resuelve 5 problemas y gana <b>+50 XP</b></p>
+          <div class="reto-cuerpo">
+            <div class="misti-reto"><img src="img/misti-cara.png" alt="Misti"></div>
+            <a href="#" class="play">▶</a>
+            <span class="pieza">🧩</span>
+          </div>
+          <small class="chip">Se actualiza cada día</small>
+        </div>
+
+        <div class="tarjeta eficiencia">
+          <h3>Mi aprendizaje</h3>
+          <div class="ef-cuerpo">
+            <ul>
+              <li><i class="p1"></i> Aciertos en quizzes</li>
+              <li><i class="p2"></i> Práctica activa</li>
+              <li><i class="p3"></i> Tareas pendientes</li>
+            </ul>
+            <div class="anillo"><span>73%</span></div>
+          </div>
+          <small>Esta semana: +10% de aciertos · 5 días activos</small>
+        </div>
+      </section>
+
+      <!-- Áreas curriculares -->
+      <section id="areas">
+        <h2 class="sub">Áreas para explorar</h2>
+        <div class="areas">
+          <a href="#" class="area a1"><span>📖</span><h4>Comunicación</h4><p>Lectura, escritura y oralidad</p></a>
+          <a href="#" class="area a2"><span>🔬</span><h4>Ciencia y Tecnología</h4><p>Experimentos y naturaleza</p></a>
+          <a href="#" class="area a3"><span>🗺️</span><h4>Personal Social</h4><p>Historia y geografía del Perú</p></a>
+          <a href="#" class="area a4"><span>🎨</span><h4>Arte y Cultura</h4><p>Música, dibujo y danza</p></a>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== COLUMNA DERECHA ===== -->
+    <aside class="derecha" id="logros">
+
+      <div class="tarjeta calendario">
+        <div class="cal-top"><h3>Actividad mensual</h3><span>Noviembre</span></div>
+        <div class="dias-sem"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+        <div class="dias">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+          <span class="ok">1</span><span class="ok">2</span><span>3</span><span class="ok">4</span><span class="hoy">5</span>
+          <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+          <span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span>
+          <span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span>
+          <span>27</span><span>28</span><span>29</span><span>30</span>
+        </div>
+        <div class="leyenda"><span><i class="lo"></i> Estudiado</span><span><i class="lh"></i> Hoy</span></div>
+      </div>
+
+      <div class="tarjeta ranking">
+        <h3>Tabla de campeones</h3>
+        <p class="mini">Los mejores de la semana</p>
+        <div class="podio">
+          <div class="puesto p-2"><div class="cara">🦙</div><b>2</b><small>Lucía</small></div>
+          <div class="puesto p-1"><div class="cara">🦅</div><b>1</b><small>Mateo</small></div>
+          <div class="puesto p-3"><div class="cara">🐸</div><b>3</b><small>Ana</small></div>
+        </div>
+        <ul class="lista">
+          <li><span>4</span> Tú <em>1 320 XP</em></li>
+          <li><span>5</span> Diego <em>1 280 XP</em></li>
+          <li><span>6</span> Valeria <em>1 150 XP</em></li>
+        </ul>
+      </div>
+
+      <div class="tarjeta consejo">
+        <div class="misti-consejo"><img src="img/misti-cara.png" alt="Misti"></div>
+        <div>
+          <h4>Consejo de Misti</h4>
+          <p>Estudia 20 minutos, descansa 5 y vuelve. ¡Tu cerebro lo agradecerá! 🧠</p>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- ===== MISTI FLOTANTE ===== -->
+  <div class="misti-flotante" id="mistiFlotante">
+    <div class="misti-globo" id="mistiGlobo">¡Hola! Soy <b>Misti</b> 🐾<br>Tócame para escucharme</div>
+    <button class="misti-btn" id="mistiBtn" aria-label="Hablar con Misti">
+      <img src="img/misti-saluda.png" alt="Misti saludando">
+      <span class="misti-onda"></span>
+    </button>
+    <button class="misti-cerrar" id="mistiCerrar" aria-label="Ocultar a Misti">✕</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
