@@ -1,0 +1,328 @@
+{
+  "schema_version": "1.0.0",
+  "estado": "demostracion_pendiente_revision_docente",
+  "advertencia": "Actividades originales propuestas y revisables; no equivalen a sesiones oficiales ni evalúan dominio de capacidades.",
+  "misiones": [
+    {
+      "id": "C4-M1",
+      "grado": 4,
+      "mundo_id": "M1",
+      "capacidad_principal_id": "L2",
+      "titulo": "La mochila de la biblioteca",
+      "tipo": "seleccion",
+      "estado_revision": "ejemplo_original_pendiente_revision_docente",
+      "pistas": [
+        "Observa qué hizo Ana después de encontrar el objeto.",
+        "Busca la parte que explica para qué avisó a la auxiliar."
+      ],
+      "descripcion": "Lee el relato y descubre lo que motivó al personaje.",
+      "texto_base": "Al terminar la clase, Ana encontró una mochila cerca de la biblioteca. No la abrió. Se acercó a la auxiliar y le explicó dónde la había visto para que su dueño pudiera recuperarla.",
+      "pregunta": "¿Por qué Ana entregó la mochila a la auxiliar?",
+      "opciones": [
+        "Para ayudar a encontrar a su dueño",
+        "Para averiguar qué tenía dentro",
+        "Para quedarse con la mochila"
+      ],
+      "respuesta_correcta_indice": 0,
+      "explicacion": "Ana quería que el dueño recuperara su mochila. Lo sabemos porque avisó dónde la encontró."
+    },
+    {
+      "id": "C4-M2",
+      "grado": 4,
+      "mundo_id": "M2",
+      "capacidad_principal_id": "O1",
+      "titulo": "Aviso de la biblioteca",
+      "tipo": "escucha",
+      "estado_revision": "ejemplo_original_pendiente_revision_docente",
+      "pistas": [
+        "Escucha otra vez dónde ocurrirá la actividad.",
+        "Presta atención a la palabra que aparece después de «en la»."
+      ],
+      "descripcion": "Escucha el anuncio antes de responder.",
+      "guion_audio": "Atención, estudiantes. Este viernes, a las diez de la mañana, tendremos un intercambio de cuentos en la biblioteca. Pueden llevar un libro que hayan leído.",
+      "audio": "audios/escucha_4.wav",
+      "pregunta": "¿Dónde será el intercambio de cuentos?",
+      "opciones": [
+        "En el patio",
+        "En la biblioteca",
+        "En el comedor"
+      ],
+      "respuesta_correcta_indice": 1,
+      "explicacion": "El anuncio menciona explícitamente que la actividad será en la biblioteca."
+    },
+    {
+      "id": "C4-M3",
+      "grado": 4,
+      "mundo_id": "M3",
+      "capacidad_principal_id": "E2",
+      "titulo": "Crea un cuento de tres momentos",
+      "tipo": "escritura",
+      "estado_revision": "ejemplo_original_pendiente_revision_docente",
+      "pistas": [
+        "Empieza diciendo dónde apareció la caja y quién la encontró.",
+        "Después crea un problema pequeño y piensa cómo termina."
+      ],
+      "descripcion": "Pon en práctica la imaginación y organiza tus ideas.",
+      "consigna": "Imagina que una caja misteriosa aparece en el patio del colegio. Escribe un cuento con inicio, desarrollo y final. Usa personajes ficticios; no escribas tus datos personales.",
+      "criterios_rubrica": [
+        "Presenta una situación inicial comprensible.",
+        "Cuenta los hechos en un orden lógico.",
+        "Escribe un desenlace relacionado con los hechos."
+      ]
+    },
+    {
+      "id": "C4-M4",
+      "grado": 4,
+      "mundo_id": "M4",
+      "capacidad_principal_id": "O3",
+      "titulo": "Cuenta tu historia en voz alta",
+      "tipo": "oralidad",
+      "estado_revision": "ejemplo_original_pendiente_revision_docente",
+      "pistas": [
+        "Prepara tres partes: inicio, qué sucedió y final.",
+        "Ensaya despacio y usa frases breves que puedas recordar."
+      ],
+      "descripcion": "Prepara una presentación corta para contarla en voz alta.",
+      "consigna": "Prepara un relato oral de aproximadamente un minuto sobre una experiencia ficticia en tu escuela. Practícalo en voz alta y escribe un pequeño guion para recordar las ideas. En esta demo no se graba tu voz.",
+      "criterios_rubrica": [
+        "Presenta el tema antes de contar lo sucedido.",
+        "Organiza lo que cuenta de manera comprensible.",
+        "Cierra su narración de forma clara."
+      ]
+    },
+    {
+      "id": "C4-M5",
+      "grado": 4,
+      "mundo_id": "M5",
+      "capacidad_principal_id": "E1",
+      "titulo": "Campaña: cuidemos el agua",
+      "tipo": "proyecto",
+      "estado_revision": "ejemplo_original_pendiente_revision_docente",
+      "pistas": [
+        "Decide quién leerá tu afiche: compañeros, familias o docentes.",
+        "Puedes proponer cerrar el caño y revisar fugas. Explica por qué."
+      ],
+      "descripcion": "Combina lectura, creación y una propuesta para tu comunidad.",
+      "consigna": "Proyecto final: imagina que tu colegio organizará una campaña para ahorrar agua. Escribe un mensaje para un afiche: identifica a quién va dirigido, propón dos acciones y explica por qué son útiles. Después, practica explicarlo en voz alta.",
+      "criterios_rubrica": [
+        "El mensaje se dirige a una audiencia concreta.",
+        "Presenta propuestas claras y realizables.",
+        "La explicación escrita comunica su propósito."
+      ]
+    },
+    {
+      "id": "C5-M1",
+      "grado": 5,
+      "mundo_id": "M1",
+      "capacidad_principal_id": "L3",
+      "titulo": "El cartel de los libros",
+      "tipo": "seleccion",
+      "estado_revision": "ejemplo_original_pendiente_revision_docente",
+      "pistas": [
+        "Observa qué acción se invita a realizar.",
+        "¿El texto busca convencerte de asistir o explicar una regla?"
+      ],
+      "descripcion": "Analiza un texto y reflexiona sobre su propósito.",
+      "texto_base": "El consejo escolar colocó este anuncio: «¡Dale otra vida a un libro! Ven el miércoles al intercambio de lecturas. Puedes traer un libro en buen estado y llevarte otro». Al final añadieron: «Compartir historias nos acerca».",
+      "pregunta": "¿Qué propósito principal tiene el anuncio?",
+      "opciones": [
+        "Informar e invitar a intercambiar libros",
+        "Prohibir que los estudiantes lean",
+        "Solicitar la compra de libros nuevos"
+      ],
+      "respuesta_correcta_indice": 0,
+      "explicacion": "El anuncio invita a una actividad de intercambio de libros y da indicaciones para participar."
+    },
+    {
+      "id": "C5-M2",
+      "grado": 5,
+      "mundo_id": "M2",
+      "capacidad_principal_id": "O2",
+      "titulo": "La entrevista al artesano",
+      "tipo": "escucha",
+      "estado_revision": "ejemplo_original_pendiente_revision_docente",
+      "pistas": [
+        "Escucha qué dice sobre las técnicas que recibieron.",
+        "¿Qué relación establece entre aprender el pasado y crear algo nuevo?"
+      ],
+      "descripcion": "Escucha e interpreta la intención del entrevistado.",
+      "guion_audio": "Entrevistadora: ¿Por qué enseña su oficio a los jóvenes? Artesano: Porque quiero que aprendan nuestras técnicas y puedan crear cosas nuevas, sin olvidar lo que hemos heredado.",
+      "audio": "audios/escucha_5.wav",
+      "pregunta": "¿Qué quiere transmitir el artesano?",
+      "opciones": [
+        "Que solo las personas mayores pueden crear",
+        "Que las técnicas deben olvidarse",
+        "Que se preserve el oficio y se innove"
+      ],
+      "respuesta_correcta_indice": 2,
+      "explicacion": "Quiere que los jóvenes aprendan técnicas heredadas y también creen cosas nuevas."
+    },
+    {
+      "id": "C5-M3",
+      "grado": 5,
+      "mundo_id": "M3",
+      "capacidad_principal_id": "E1",
+      "titulo": "Carta al municipio",
+      "tipo": "escritura",
+      "estado_revision": "ejemplo_original_pendiente_revision_docente",
+      "pistas": [
+        "Empieza con un saludo dirigido a la autoridad.",
+        "Explica qué mejorarían los árboles y qué solicitas."
+      ],
+      "descripcion": "Escribe para una audiencia y con un propósito concreto.",
+      "consigna": "Imagina que quieres solicitar más árboles en un parque ficticio. Escribe una carta a una autoridad municipal: saluda, explica el problema, propone una solución y despídete. No incluyas tu dirección real.",
+      "criterios_rubrica": [
+        "El propósito y destinatario de la carta están claros.",
+        "El texto incluye una propuesta comprensible.",
+        "Mantiene una forma respetuosa adecuada al destinatario."
+      ]
+    },
+    {
+      "id": "C5-M4",
+      "grado": 5,
+      "mundo_id": "M4",
+      "capacidad_principal_id": "O5",
+      "titulo": "Entrevista respetuosa",
+      "tipo": "oralidad",
+      "estado_revision": "ejemplo_original_pendiente_revision_docente",
+      "pistas": [
+        "Una pregunta abierta suele comenzar con «cómo», «por qué» o «qué opinas».",
+        "Planea una frase para escuchar sin interrumpir y otra para agradecer."
+      ],
+      "descripcion": "Prepara preguntas y practica los turnos de habla.",
+      "consigna": "Imagina que entrevistas a una bibliotecaria. Escribe tres preguntas abiertas y un guion para presentarte, escuchar sus respuestas y agradecerle. Luego ensaya el diálogo. Esta demo no recoge audio ni prueba que hubo interacción real.",
+      "criterios_rubrica": [
+        "Las preguntas invitan a explicar experiencias u opiniones.",
+        "Respeta los turnos de participación en el ensayo.",
+        "Incluye un inicio y cierre cordial."
+      ]
+    },
+    {
+      "id": "C5-M5",
+      "grado": 5,
+      "mundo_id": "M5",
+      "capacidad_principal_id": "E4",
+      "titulo": "Revisa tu noticia escolar",
+      "tipo": "proyecto",
+      "estado_revision": "ejemplo_original_pendiente_revision_docente",
+      "pistas": [
+        "Primero cuenta lo más importante: qué ocurrió.",
+        "Relee tus frases para revisar si falta lugar, fecha o explicación."
+      ],
+      "descripcion": "Crea un texto y piensa cómo mejorarlo.",
+      "consigna": "Escribe una noticia ficticia sobre una feria de ciencias. Incluye título, qué sucedió, cuándo y dónde. Después revisa si el orden se entiende y anota dos cambios que harías para mejorarla.",
+      "criterios_rubrica": [
+        "El texto comunica los hechos principales con claridad.",
+        "El título y el cuerpo están relacionados.",
+        "Identifica y justifica dos cambios posibles de revisión."
+      ]
+    },
+    {
+      "id": "C6-M1",
+      "grado": 6,
+      "mundo_id": "M1",
+      "capacidad_principal_id": "L2",
+      "titulo": "¿Qué sucederá en secundaria?",
+      "tipo": "seleccion",
+      "estado_revision": "ejemplo_original_pendiente_revision_docente",
+      "pistas": [
+        "Relaciona los cambios de secundaria con la decisión de Camila.",
+        "Piensa qué herramienta ayuda a recordar tareas y materiales."
+      ],
+      "descripcion": "Interpreta información de un texto sobre la nueva etapa escolar.",
+      "texto_base": "Durante la visita a secundaria, la tutora explicó que habría docentes para distintas áreas. Camila anotó sus nombres y revisó los horarios del salón. Pensó que organizar una agenda la ayudaría a recordar tareas y materiales.",
+      "pregunta": "¿Por qué Camila decidió organizar una agenda?",
+      "opciones": [
+        "Porque quería dejar de hacer tareas",
+        "Porque necesitaba organizar responsabilidades nuevas",
+        "Porque no le gustaban los docentes"
+      ],
+      "respuesta_correcta_indice": 1,
+      "explicacion": "Camila anticipó que tendría varias áreas, materiales y tareas, y decidió organizarse con una agenda."
+    },
+    {
+      "id": "C6-M2",
+      "grado": 6,
+      "mundo_id": "M2",
+      "capacidad_principal_id": "O1",
+      "titulo": "Presentación del nuevo colegio",
+      "tipo": "escucha",
+      "estado_revision": "ejemplo_original_pendiente_revision_docente",
+      "pistas": [
+        "Escucha cómo se enumeran los días de la semana.",
+        "Fíjate en qué acción se menciona justo después de «miércoles»."
+      ],
+      "descripcion": "Escucha una presentación e identifica información específica.",
+      "guion_audio": "Bienvenidas y bienvenidos a secundaria. El lunes recibirán sus horarios. El martes visitarán la biblioteca y el miércoles conocerán los talleres. Cada estudiante tendrá un tutor de referencia.",
+      "audio": "audios/escucha_6.wav",
+      "pregunta": "¿Qué actividad está programada para el miércoles?",
+      "opciones": [
+        "La entrega de horarios",
+        "La visita a la biblioteca",
+        "Conocer los talleres"
+      ],
+      "respuesta_correcta_indice": 2,
+      "explicacion": "La presentación anuncia que el miércoles conocerán los talleres."
+    },
+    {
+      "id": "C6-M3",
+      "grado": 6,
+      "mundo_id": "M3",
+      "capacidad_principal_id": "E2",
+      "titulo": "Argumenta una propuesta",
+      "tipo": "escritura",
+      "estado_revision": "ejemplo_original_pendiente_revision_docente",
+      "pistas": [
+        "Comienza con «Considero que...» y explica tu posición.",
+        "Ordena tus razones con «primero» y «además»."
+      ],
+      "descripcion": "Construye un texto con ideas, razones y cierre.",
+      "consigna": "Imagina que el colegio pregunta si debería haber un espacio de lectura durante los recreos. Redacta tu opinión, aporta dos razones y cierra con una propuesta concreta. Utiliza un ejemplo inventado; no menciones datos de compañeros reales.",
+      "criterios_rubrica": [
+        "La postura frente al tema es clara.",
+        "Da razones conectadas con la opinión.",
+        "Cierra con una propuesta pertinente."
+      ]
+    },
+    {
+      "id": "C6-M4",
+      "grado": 6,
+      "mundo_id": "M4",
+      "capacidad_principal_id": "O3",
+      "titulo": "Presenta ideas para secundaria",
+      "tipo": "oralidad",
+      "estado_revision": "ejemplo_original_pendiente_revision_docente",
+      "pistas": [
+        "Piensa en consejos sobre organización, convivencia y pedir ayuda.",
+        "Prepara una introducción que anuncie tus tres consejos."
+      ],
+      "descripcion": "Prepara una exposición oral de ideas ordenadas.",
+      "consigna": "Prepara una exposición oral de dos minutos con tres consejos para estudiantes que ingresan a secundaria. Escribe un guion con inicio, desarrollo y cierre, y practícalo. La demo no evalúa automáticamente tu voz.",
+      "criterios_rubrica": [
+        "Presenta claramente el tema y propósito.",
+        "Organiza consejos con una explicación o ejemplo.",
+        "Cierra con una conclusión breve."
+      ]
+    },
+    {
+      "id": "C6-M5",
+      "grado": 6,
+      "mundo_id": "M5",
+      "capacidad_principal_id": "E4",
+      "titulo": "Crea y revisa tu pódcast",
+      "tipo": "proyecto",
+      "estado_revision": "ejemplo_original_pendiente_revision_docente",
+      "pistas": [
+        "Imagina que quien escucha está nervioso por el nuevo nivel.",
+        "Escribe primero las dos recomendaciones y después añade saludo y despedida."
+      ],
+      "descripcion": "Combina escritura, planificación y comunicación oral.",
+      "consigna": "Diseña el guion de un pódcast ficticio de dos minutos sobre cómo prepararse para secundaria. Incluye bienvenida, dos recomendaciones explicadas, una invitación a escuchar diferentes opiniones y despedida. Después indica qué mejorarías en una segunda versión.",
+      "criterios_rubrica": [
+        "El guion está ordenado para ser comprendido al escucharlo.",
+        "Las recomendaciones son claras y están justificadas.",
+        "Propone una mejora concreta al revisar el guion."
+      ]
+    }
+  ]
+}

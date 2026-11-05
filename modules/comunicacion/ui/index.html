@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Misti | Comunicación</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="brand"><span class="mark" aria-hidden="true">M</span><div><strong>Misti</strong><small>Comunicación · Demo</small></div></div>
+      <div class="top-actions"><span class="chip">📍 Arequipa · Primaria</span><button id="showReport" class="button secondary">📊 Mi avance</button></div>
+    </header>
+    <main>
+      <section class="hero">
+        <div><p class="eyebrow">TU AVENTURA EDUCATIVA</p><h1>¡Aprender a comunicar<br/><em>es una aventura!</em></h1>
+          <p>Explora historias, escucha mensajes, crea textos y expresa tus ideas con el apoyo de Misti.</p>
+          <div class="grade-row"><span>Elige tu grado</span><div id="gradeButtons" class="grades" role="group" aria-label="Grado de primaria"></div></div>
+        </div>
+        <div class="mascot-wrap"><div class="mascot" aria-label="Mascota Misti"><div class="mountain">▲</div><div class="eyes">• ᴗ •</div></div><div class="mascot-caption">¡Vamos paso a paso!</div></div>
+      </section>
+      <section class="stats" aria-label="Progreso del estudiante"><div class="stat"><span>⭐</span><div><strong id="xpValue">0</strong><small>XP de práctica</small></div></div><div class="stat"><span>🔥</span><div><strong id="streakValue">0</strong><small>Días de racha</small></div></div><div class="stat"><span>🎯</span><div><strong id="finishedValue">0/5</strong><small>Misiones entregadas</small></div></div></section>
+      <div class="layout">
+        <section class="world-area"><div class="section-heading"><div><p class="eyebrow">MAPA DE AVENTURAS</p><h2>Mis cinco mundos</h2></div><span class="section-note">Una misión por mundo en esta demo</span></div><div id="worldCards" class="worlds"></div></section>
+        <aside class="assistant-box"><div class="assistant-head"><span class="bubble-avatar">M</span><div><strong>Misti te acompaña</strong><small>Guía de aprendizaje</small></div></div><p id="mistiLine">Elige tu grado y comienza por el mundo de lectura. ¡Cada paso cuenta!</p><div class="assistant-note">Las pistas te ayudan a descubrir la respuesta, no a copiarla.</div></aside>
+      </div>
+      <section id="activityPanel" class="activity-panel" aria-live="polite"><div class="activity-placeholder"><span>🗺️</span><h2>Selecciona una misión</h2><p>Empieza por el primer mundo para desbloquear los siguientes.</p></div></section>
+      <section id="reportPanel" class="report-panel" hidden aria-live="polite"></section>
+    </main>
+    <footer>Prototipo educativo de Hack4Edu · Actividades originales de demostración pendientes de validación docente · No constituye evaluación oficial.</footer>
+  </div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
