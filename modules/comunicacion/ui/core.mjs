@@ -83,7 +83,9 @@ export function getMissionSummary(state, grade, missions, capacities) {
   const rows=[];
   for (const c of capacities) {
     const relevant=missions.filter(x=>x.grado===Number(grade) && x.capacidad_principal_id===c.id);
-    const finished=relevant.filter(x=>g.done[x.id]).map(x=>g.done[x.id]);
+    const missionIds=new Set(missions.map(x=>x.id));
+    const finished=[...relevant.filter(x=>g.done[x.id]).map(x=>g.done[x.id]),
+      ...Object.entries(g.done).filter(([id,r])=>!missionIds.has(id)&&r?.capacidad_id===c.id).map(([,r])=>r)];
     let status='Sin actividad completada';
     if (finished.some(x=>x.mode==='verified_answer'))status='Acierto puntual registrado';
     else if(finished.some(x=>x.mode==='answer_with_transcript'))status='Respuesta con apoyo de transcripción';

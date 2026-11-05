@@ -153,4 +153,5 @@ async function start(){
   $('#worldCards').innerHTML=`<div class="error-box"><strong>No pudimos iniciar las misiones.</strong><p>${escape(e.message)}</p><p>Abre una terminal en la raíz de synaps3du y ejecuta <code>python -m http.server 8000</code>. Luego abre <code>http://localhost:8000/modules/comunicacion/ui/</code>. Comprueba también que subiste la matriz curricular del Commit 2.</p></div>`;
  }
 }
+window.addEventListener('misti:practice-saved',()=>{ state=readState(); renderStats(); if(!$('#reportPanel').hidden)renderReport(); });
 start();

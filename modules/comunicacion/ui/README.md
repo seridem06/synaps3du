@@ -43,3 +43,11 @@ node --test modules/comunicacion/ui/tests/core.test.mjs
 ## Próximo paso de integración
 
 Validar las actividades y rúbricas con un docente; ampliar los contenidos por capacidad y desempeño de grado; definir una API segura para conectar los **borradores revisados** del Commit 3 y los eventos de progreso al backend común. Nunca exponer una clave OpenRouter en código JavaScript del navegador ni subirla a GitHub.
+
+## Actualización del Commit 5 — banco de variantes y revisión de IA
+
+Se añade un bloque **«Una nueva historia para practicar»** conectado a la API local del backend de Misti. Para usarlo, ya **no** basta con `python -m http.server`: ejecuta desde la raíz `python modules/comunicacion/backend/servidor.py --port 8765` y abre `http://127.0.0.1:8765/modules/comunicacion/ui/`.
+
+El banco inicial ofrece **9 muestras originales de la capacidad L2**, tres por grado. Se identifican explícitamente como contenido demostrativo no aprobado por docentes. Más capacidades aparecerán cuando el responsable docente revise y publique actividades usando `backend/gestor_docente.py`. El servidor verifica las respuestas cerradas, mientras que las tareas abiertas siguen pendientes de revisión.
+
+El navegador **no llama a OpenRouter**. El flujo de generación está reservado a un proceso editorial local fuera de la sesión del estudiante. Lee `../backend/README.md` para instrucciones y limitaciones.

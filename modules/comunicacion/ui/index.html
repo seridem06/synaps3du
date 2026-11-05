@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Misti | Comunicación</title>
   <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="ia.css"/>
 </head>
 <body>
   <div class="page">
@@ -26,10 +27,18 @@
         <aside class="assistant-box"><div class="assistant-head"><span class="bubble-avatar">M</span><div><strong>Misti te acompaña</strong><small>Guía de aprendizaje</small></div></div><p id="mistiLine">Elige tu grado y comienza por el mundo de lectura. ¡Cada paso cuenta!</p><div class="assistant-note">Las pistas te ayudan a descubrir la respuesta, no a copiarla.</div></aside>
       </div>
       <section id="activityPanel" class="activity-panel" aria-live="polite"><div class="activity-placeholder"><span>🗺️</span><h2>Selecciona una misión</h2><p>Empieza por el primer mundo para desbloquear los siguientes.</p></div></section>
+      <section id="iaPanel" class="ia-panel" aria-label="Práctica con variantes de actividades">
+        <div class="ia-header"><div><p class="eyebrow">PRÁCTICA VARIABLE · COMMIT 5</p><h2>🔮 Una nueva historia para practicar</h2><p class="ia-intro">Misti puede ofrecer distintas actividades para una misma capacidad. Las muestras son originales de demostración; los borradores nuevos de IA solo se publican tras revisión humana.</p></div><span id="iaStatus" class="ia-status warning">Buscando servidor local...</span></div>
+        <div class="ia-toolbar"><label>Elige una capacidad disponible<select id="iaCapacity" aria-label="Capacidad para practicar"></select></label><button type="button" class="button secondary" id="iaLoad">🔄 Otra versión</button></div>
+        <div id="iaContent" class="ia-activity"><p class="ia-empty">Conectando con el banco de actividades...</p></div>
+        <p id="iaFeedback" class="ia-feedback" role="status" aria-live="polite"></p>
+        <p class="review-note">XP y rachas de práctica, no notas oficiales. No introduzcas información privada. Las respuestas cerradas se verifican desde el servidor local.</p>
+      </section>
       <section id="reportPanel" class="report-panel" hidden aria-live="polite"></section>
     </main>
     <footer>Prototipo educativo de Hack4Edu · Actividades originales de demostración pendientes de validación docente · No constituye evaluación oficial.</footer>
   </div>
   <script type="module" src="app.js"></script>
+  <script type="module" src="ia.js"></script>
 </body>
 </html>
