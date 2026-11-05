@@ -1,0 +1,543 @@
+{
+  "schema_version": "0.1.0",
+  "proyecto": "Misti AI · Comunicación · Hack4Edu",
+  "nivel": "Primaria",
+  "grados": [
+    4,
+    5,
+    6
+  ],
+  "estado": "propuesta_pedagogica_en_revision",
+  "nota_integridad": "Los nombres de competencias y capacidades son los del Programa Curricular MINEDU; los cinco mundos, códigos internos, objetivos de grado, actividades y evidencias son propuestas originales del equipo que requieren revisión docente. No se transcriben literalmente los desempeños oficiales.",
+  "fuentes": [
+    {
+      "tipo": "programa_curricular_oficial",
+      "institucion": "Ministerio de Educación del Perú",
+      "titulo": "Programa curricular de Educación Primaria",
+      "url": "https://repositorio.minedu.gob.pe/handle/20.500.12799/4549",
+      "seccion": "6.4 Comunicación, competencias y desempeños por grado, páginas impresas 144-178"
+    },
+    {
+      "tipo": "recurso_didactico_oficial",
+      "institucion": "Ministerio de Educación del Perú",
+      "titulo": "Texto de Comunicación 4, cuarto grado de primaria",
+      "url": "https://repositorio.minedu.gob.pe/handle/20.500.12799/11804",
+      "seccion": "Situaciones comunicativas"
+    }
+  ],
+  "competencias": [
+    {
+      "id": "C07",
+      "nombre": "Se comunica oralmente en su lengua materna",
+      "capacidades": [
+        "O1",
+        "O2",
+        "O3",
+        "O4",
+        "O5",
+        "O6"
+      ]
+    },
+    {
+      "id": "C08",
+      "nombre": "Lee diversos tipos de textos escritos en su lengua materna",
+      "capacidades": [
+        "L1",
+        "L2",
+        "L3"
+      ]
+    },
+    {
+      "id": "C09",
+      "nombre": "Escribe diversos tipos de textos en su lengua materna",
+      "capacidades": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ]
+    }
+  ],
+  "mundos": [
+    {
+      "id": "M1",
+      "titulo": "Exploradores de historias",
+      "enfoque": "Lectura e interpretación",
+      "capacidades_destacadas": [
+        "L1",
+        "L2",
+        "L3"
+      ]
+    },
+    {
+      "id": "M2",
+      "titulo": "Oídos atentos",
+      "enfoque": "Escucha e interpretación oral",
+      "capacidades_destacadas": [
+        "O1",
+        "O2",
+        "O5",
+        "O6"
+      ]
+    },
+    {
+      "id": "M3",
+      "titulo": "Creadores de palabras",
+      "enfoque": "Planificación, producción y revisión escrita",
+      "capacidades_destacadas": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ]
+    },
+    {
+      "id": "M4",
+      "titulo": "Voces que inspiran",
+      "enfoque": "Expresión e interacción oral",
+      "capacidades_destacadas": [
+        "O3",
+        "O4",
+        "O5",
+        "O6"
+      ]
+    },
+    {
+      "id": "M5",
+      "titulo": "Grandes comunicadores",
+      "enfoque": "Proyecto integrador de comunicación",
+      "capacidades_destacadas": [
+        "L1",
+        "L2",
+        "L3",
+        "O1",
+        "O2",
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ]
+    }
+  ],
+  "capacidades": [
+    {
+      "id": "O1",
+      "nombre_oficial": "Obtiene información del texto oral",
+      "competencia_id": "C07",
+      "mundo_principal": "M2",
+      "mundos_adicionales": [
+        "M5"
+      ],
+      "tipo_actividad_sugerido": "audio_opcion_multiple",
+      "por_grado": {
+        "4": {
+          "ciclo": "IV",
+          "objetivo_propuesto": "Reconocer datos explícitos de una narración escuchada",
+          "actividad_ejemplo_original": "Escuchar instrucciones de una feria escolar y ubicar lugar, fecha y actividad",
+          "evidencia_sugerida": "Identifica y recupera información que sí aparece en el audio"
+        },
+        "5": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Seleccionar datos relevantes de una entrevista oral",
+          "actividad_ejemplo_original": "Escuchar entrevista a una artesana y organizar datos en una ficha",
+          "evidencia_sugerida": "Selecciona datos relevantes y distingue los principales"
+        },
+        "6": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Recuperar y organizar información específica de una exposición",
+          "actividad_ejemplo_original": "Escuchar una explicación sobre el ingreso a secundaria y completar una ficha",
+          "evidencia_sugerida": "Integra información explícita de distintos momentos del audio"
+        }
+      },
+      "estado_validacion": "pendiente_revision_docente"
+    },
+    {
+      "id": "O2",
+      "nombre_oficial": "Infiere e interpreta información del texto oral",
+      "competencia_id": "C07",
+      "mundo_principal": "M2",
+      "mundos_adicionales": [
+        "M5"
+      ],
+      "tipo_actividad_sugerido": "audio_inferencia",
+      "por_grado": {
+        "4": {
+          "ciclo": "IV",
+          "objetivo_propuesto": "Inferir intenciones y emociones desde pistas de un diálogo",
+          "actividad_ejemplo_original": "Escuchar a dos compañeros planear una visita y deducir el propósito",
+          "evidencia_sugerida": "Explica la inferencia indicando la pista del audio"
+        },
+        "5": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Relacionar causas y consecuencias en un mensaje oral",
+          "actividad_ejemplo_original": "Escuchar un relato de convivencia e inferir por qué cambió una decisión",
+          "evidencia_sugerida": "Justifica su inferencia con detalles oídos"
+        },
+        "6": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Interpretar un propósito y un punto de vista en una entrevista",
+          "actividad_ejemplo_original": "Comparar lo que dicen dos estudiantes sobre el cambio a secundaria",
+          "evidencia_sugerida": "Sustenta una interpretación con indicios del mensaje"
+        }
+      },
+      "estado_validacion": "pendiente_revision_docente"
+    },
+    {
+      "id": "O3",
+      "nombre_oficial": "Adecúa, organiza y desarrolla las ideas de forma coherente y cohesionada",
+      "competencia_id": "C07",
+      "mundo_principal": "M4",
+      "mundos_adicionales": [
+        "M5"
+      ],
+      "tipo_actividad_sugerido": "guion_exposicion",
+      "por_grado": {
+        "4": {
+          "ciclo": "IV",
+          "objetivo_propuesto": "Exponer oralmente ideas ordenadas con inicio, desarrollo y cierre",
+          "actividad_ejemplo_original": "Preparar y presentar una recomendación de lectura breve",
+          "evidencia_sugerida": "Guion o registro de presentación organizado"
+        },
+        "5": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Organizar una exposición con ideas principales y conectores",
+          "actividad_ejemplo_original": "Explicar una propuesta para mejorar el recreo",
+          "evidencia_sugerida": "Guion y presentación con secuencia reconocible"
+        },
+        "6": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Argumentar oralmente una propuesta con razones y conclusión",
+          "actividad_ejemplo_original": "Presentar un plan de bienvenida a nuevos estudiantes",
+          "evidencia_sugerida": "Argumentación estructurada con razones pertinentes"
+        }
+      },
+      "estado_validacion": "pendiente_revision_docente"
+    },
+    {
+      "id": "O4",
+      "nombre_oficial": "Utiliza recursos no verbales y paraverbales de forma estratégica",
+      "competencia_id": "C07",
+      "mundo_principal": "M4",
+      "mundos_adicionales": [
+        "M5"
+      ],
+      "tipo_actividad_sugerido": "practica_oral",
+      "por_grado": {
+        "4": {
+          "ciclo": "IV",
+          "objetivo_propuesto": "Reconocer cuándo el volumen y los gestos apoyan el mensaje",
+          "actividad_ejemplo_original": "Ensayar cómo explicar una norma de convivencia",
+          "evidencia_sugerida": "Autoevaluación guiada sobre claridad, pausas y gestos"
+        },
+        "5": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Emplear pausas, entonación y gestos acordes al mensaje",
+          "actividad_ejemplo_original": "Ensayar una exposición sobre una campaña del aula",
+          "evidencia_sugerida": "Registro de autoevaluación y observación del docente"
+        },
+        "6": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Elegir recursos expresivos adecuados al público y propósito",
+          "actividad_ejemplo_original": "Preparar presentación para una asamblea escolar",
+          "evidencia_sugerida": "Lista de cotejo de recursos expresivos y devolución humana"
+        }
+      },
+      "estado_validacion": "pendiente_revision_docente"
+    },
+    {
+      "id": "O5",
+      "nombre_oficial": "Interactúa estratégicamente con distintos interlocutores",
+      "competencia_id": "C07",
+      "mundo_principal": "M4",
+      "mundos_adicionales": [
+        "M2",
+        "M5"
+      ],
+      "tipo_actividad_sugerido": "dialogo_simulado",
+      "por_grado": {
+        "4": {
+          "ciclo": "IV",
+          "objetivo_propuesto": "Formular preguntas y responder respetando turnos",
+          "actividad_ejemplo_original": "Simular entrevista a una persona de la comunidad",
+          "evidencia_sugerida": "Preguntas pertinentes y respuestas conectadas"
+        },
+        "5": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Escuchar, repreguntar y aportar al tema",
+          "actividad_ejemplo_original": "Simular conversación grupal sobre un cuento",
+          "evidencia_sugerida": "Intervenciones que retoman lo dicho por otro"
+        },
+        "6": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Sostener diálogo con argumentos y preguntas oportunas",
+          "actividad_ejemplo_original": "Participar en una mesa redonda sobre convivencia escolar",
+          "evidencia_sugerida": "Intervenciones respetuosas, pertinentes y con seguimiento"
+        }
+      },
+      "estado_validacion": "pendiente_revision_docente"
+    },
+    {
+      "id": "O6",
+      "nombre_oficial": "Reflexiona y evalúa la forma, el contenido y contexto del texto oral",
+      "competencia_id": "C07",
+      "mundo_principal": "M2",
+      "mundos_adicionales": [
+        "M4",
+        "M5"
+      ],
+      "tipo_actividad_sugerido": "reflexion_oral",
+      "por_grado": {
+        "4": {
+          "ciclo": "IV",
+          "objetivo_propuesto": "Dar opinión razonada sobre un mensaje escuchado",
+          "actividad_ejemplo_original": "Comparar dos mensajes para elegir cuál comunica mejor una invitación",
+          "evidencia_sugerida": "Opinión con una razón asociada al propósito"
+        },
+        "5": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Evaluar claridad y pertinencia de una intervención oral",
+          "actividad_ejemplo_original": "Escuchar dos explicaciones y comentar cuál resulta más clara",
+          "evidencia_sugerida": "Justificación sobre claridad, propósito y recursos utilizados"
+        },
+        "6": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Analizar la eficacia de un mensaje para su destinatario",
+          "actividad_ejemplo_original": "Revisar una exposición sobre la transición escolar",
+          "evidencia_sugerida": "Comentario sustentado sobre contenido, forma y audiencia"
+        }
+      },
+      "estado_validacion": "pendiente_revision_docente"
+    },
+    {
+      "id": "L1",
+      "nombre_oficial": "Obtiene información del texto escrito",
+      "competencia_id": "C08",
+      "mundo_principal": "M1",
+      "mundos_adicionales": [
+        "M5"
+      ],
+      "tipo_actividad_sugerido": "lectura_localizacion",
+      "por_grado": {
+        "4": {
+          "ciclo": "IV",
+          "objetivo_propuesto": "Ubicar datos explícitos en avisos y textos breves",
+          "actividad_ejemplo_original": "Leer el cartel de una feria y localizar hora y responsables",
+          "evidencia_sugerida": "Datos localizados con referencia a su fragmento"
+        },
+        "5": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Seleccionar información explícita de distintas partes de un texto",
+          "actividad_ejemplo_original": "Leer reportaje escolar y completar una tabla de datos",
+          "evidencia_sugerida": "Tabla con evidencias textuales correctas"
+        },
+        "6": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Integrar información de varias secciones del mismo texto",
+          "actividad_ejemplo_original": "Leer una guía de adaptación a secundaria y reconstruir recomendaciones",
+          "evidencia_sugerida": "Síntesis de datos de distintas secciones"
+        }
+      },
+      "estado_validacion": "pendiente_revision_docente"
+    },
+    {
+      "id": "L2",
+      "nombre_oficial": "Infiere e interpreta información del texto",
+      "competencia_id": "C08",
+      "mundo_principal": "M1",
+      "mundos_adicionales": [
+        "M5"
+      ],
+      "tipo_actividad_sugerido": "lectura_inferencia",
+      "por_grado": {
+        "4": {
+          "ciclo": "IV",
+          "objetivo_propuesto": "Inferir causas o intenciones usando indicios del texto",
+          "actividad_ejemplo_original": "Leer un cuento sobre una biblioteca y explicar una decisión",
+          "evidencia_sugerida": "Inferencia respaldada por una frase o hecho del relato"
+        },
+        "5": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Interpretar motivaciones, relaciones y tema global",
+          "actividad_ejemplo_original": "Leer una crónica y deducir por qué cambió el personaje",
+          "evidencia_sugerida": "Explicación que une indicios y conclusión"
+        },
+        "6": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Interpretar puntos de vista e información implícita",
+          "actividad_ejemplo_original": "Leer dos relatos sobre el primer día de secundaria",
+          "evidencia_sugerida": "Interpretación argumentada con evidencia textual"
+        }
+      },
+      "estado_validacion": "pendiente_revision_docente"
+    },
+    {
+      "id": "L3",
+      "nombre_oficial": "Reflexiona y evalúa la forma, el contenido y contexto del texto",
+      "competencia_id": "C08",
+      "mundo_principal": "M1",
+      "mundos_adicionales": [
+        "M5"
+      ],
+      "tipo_actividad_sugerido": "lectura_opinion",
+      "por_grado": {
+        "4": {
+          "ciclo": "IV",
+          "objetivo_propuesto": "Opinar sobre la utilidad de un texto y justificarlo",
+          "actividad_ejemplo_original": "Comparar dos afiches escolares y recomendar uno",
+          "evidencia_sugerida": "Opinión justificada con un elemento del texto"
+        },
+        "5": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Explicar cómo los recursos del texto apoyan su intención",
+          "actividad_ejemplo_original": "Valorar títulos, imágenes y argumentos de un artículo",
+          "evidencia_sugerida": "Justifica la eficacia de un recurso textual"
+        },
+        "6": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Evaluar confiabilidad e intención de mensajes escritos",
+          "actividad_ejemplo_original": "Contrastar dos publicaciones escolares sobre un mismo hecho",
+          "evidencia_sugerida": "Valoración razonada de evidencia y propósito"
+        }
+      },
+      "estado_validacion": "pendiente_revision_docente"
+    },
+    {
+      "id": "E1",
+      "nombre_oficial": "Adecúa el texto a la situación comunicativa",
+      "competencia_id": "C09",
+      "mundo_principal": "M3",
+      "mundos_adicionales": [
+        "M5"
+      ],
+      "tipo_actividad_sugerido": "escritura_planificacion",
+      "por_grado": {
+        "4": {
+          "ciclo": "IV",
+          "objetivo_propuesto": "Seleccionar propósito, destinatario y tono de una carta",
+          "actividad_ejemplo_original": "Planificar una carta para invitar a una actividad",
+          "evidencia_sugerida": "Plan con destinatario, intención y tipo de texto"
+        },
+        "5": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Elegir formato y registro adecuados a una situación",
+          "actividad_ejemplo_original": "Planificar una noticia escolar para familias",
+          "evidencia_sugerida": "Plan que justifica formato, destinatario y registro"
+        },
+        "6": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Ajustar formato, registro y fuentes a un público concreto",
+          "actividad_ejemplo_original": "Planificar carta formal de propuesta a dirección escolar",
+          "evidencia_sugerida": "Plan con propósito, audiencia y sustento pertinente"
+        }
+      },
+      "estado_validacion": "pendiente_revision_docente"
+    },
+    {
+      "id": "E2",
+      "nombre_oficial": "Organiza y desarrolla las ideas de forma coherente y cohesionada",
+      "competencia_id": "C09",
+      "mundo_principal": "M3",
+      "mundos_adicionales": [
+        "M5"
+      ],
+      "tipo_actividad_sugerido": "escritura_creativa",
+      "por_grado": {
+        "4": {
+          "ciclo": "IV",
+          "objetivo_propuesto": "Escribir texto breve con inicio, desarrollo y cierre",
+          "actividad_ejemplo_original": "Redactar cuento sobre una visita a la biblioteca",
+          "evidencia_sugerida": "Borrador con secuencia lógica y conectores básicos"
+        },
+        "5": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Construir párrafos vinculados mediante conectores pertinentes",
+          "actividad_ejemplo_original": "Redactar crónica de una actividad comunitaria",
+          "evidencia_sugerida": "Párrafos ordenados y relaciones entre ideas"
+        },
+        "6": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Desarrollar texto argumentativo con razones y conclusión",
+          "actividad_ejemplo_original": "Escribir artículo de opinión sobre la bienvenida escolar",
+          "evidencia_sugerida": "Texto con tesis, argumentos pertinentes y cierre"
+        }
+      },
+      "estado_validacion": "pendiente_revision_docente"
+    },
+    {
+      "id": "E3",
+      "nombre_oficial": "Utiliza convenciones del lenguaje escrito de forma pertinente",
+      "competencia_id": "C09",
+      "mundo_principal": "M3",
+      "mundos_adicionales": [
+        "M5"
+      ],
+      "tipo_actividad_sugerido": "revision_escritura",
+      "por_grado": {
+        "4": {
+          "ciclo": "IV",
+          "objetivo_propuesto": "Revisar puntuación y claridad en un texto breve",
+          "actividad_ejemplo_original": "Corregir una invitación con problemas de signos y mayúsculas",
+          "evidencia_sugerida": "Versión corregida y explicación de algunas correcciones"
+        },
+        "5": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Aplicar recursos ortográficos y conectores para dar claridad",
+          "actividad_ejemplo_original": "Mejorar un relato para separar ideas y evitar repeticiones",
+          "evidencia_sugerida": "Borrador editado con justificación de cambios"
+        },
+        "6": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Revisar puntuación, cohesión y elecciones léxicas según propósito",
+          "actividad_ejemplo_original": "Editar una carta argumentativa dirigida al colegio",
+          "evidencia_sugerida": "Texto revisado con cambios pertinentes y explicación"
+        }
+      },
+      "estado_validacion": "pendiente_revision_docente"
+    },
+    {
+      "id": "E4",
+      "nombre_oficial": "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito",
+      "competencia_id": "C09",
+      "mundo_principal": "M3",
+      "mundos_adicionales": [
+        "M5"
+      ],
+      "tipo_actividad_sugerido": "autoevaluacion_rubrica",
+      "por_grado": {
+        "4": {
+          "ciclo": "IV",
+          "objetivo_propuesto": "Comprobar si el texto cumple el propósito y mejorarlo",
+          "actividad_ejemplo_original": "Releer un cuento con preguntas de autoevaluación",
+          "evidencia_sugerida": "Borrador inicial, lista de cotejo y versión revisada"
+        },
+        "5": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Evaluar coherencia y adecuación al destinatario",
+          "actividad_ejemplo_original": "Revisar una noticia escolar y justificar modificaciones",
+          "evidencia_sugerida": "Comparación de borradores con cambios razonados"
+        },
+        "6": {
+          "ciclo": "V",
+          "objetivo_propuesto": "Evaluar el efecto de su texto y revisar argumentos y lenguaje",
+          "actividad_ejemplo_original": "Revisar un artículo para convencer a un público definido",
+          "evidencia_sugerida": "Autoevaluación razonada y segunda versión"
+        }
+      },
+      "estado_validacion": "pendiente_revision_docente"
+    }
+  ],
+  "reglas_diseno": {
+    "capacidad_primaria_requerida": true,
+    "permitir_capacidades_secundarias": true,
+    "registrar_evidencia_por_capacidad": true,
+    "respuestas_abiertas_necesitan_rubrica": true,
+    "evaluacion_ia_no_es_nota_oficial": true,
+    "voz_no_obligatoria_para_el_mvp": true,
+    "progreso_no_equivale_automaticamente_a_dominio": true,
+    "racha_basada_en_dias_de_practica_no_en_aciertos_consecutivos": true
+  }
+}
