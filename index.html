@@ -1,310 +1,156 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SYNAPS3DU · Guía para 4°, 5° y 6° de primaria</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Misty · tu gata guía</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-modo="tutor">
+  <div id="toasts" aria-live="polite"></div>
 
-  <!-- ===== Mascota MISTI (SVG reutilizable) ===== -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <defs>
-      <pattern id="rayas" width="24" height="24" patternUnits="userSpaceOnUse" patternTransform="rotate(20)">
-        <rect width="6" height="24" fill="#E8553E"/>
-        <rect x="6" width="6" height="24" fill="#F5B83D"/>
-        <rect x="12" width="6" height="24" fill="#5BB36A"/>
-        <rect x="18" width="6" height="24" fill="#5B8DEF"/>
-      </pattern>
-    </defs>
-    <symbol id="misti" viewBox="0 0 200 200">
-      <!-- orejas -->
-      <polygon points="38,88 52,18 98,58" fill="#E9A23B" stroke="#6B3E1E" stroke-width="4" stroke-linejoin="round"/>
-      <polygon points="162,88 148,18 102,58" fill="#E9A23B" stroke="#6B3E1E" stroke-width="4" stroke-linejoin="round"/>
-      <polygon points="50,74 57,36 84,60" fill="#F4A6A0"/>
-      <polygon points="150,74 143,36 116,60" fill="#F4A6A0"/>
-      <!-- bufanda trasera -->
-      <ellipse cx="100" cy="172" rx="62" ry="20" fill="url(#rayas)"/>
-      <!-- cabeza -->
-      <ellipse cx="100" cy="106" rx="72" ry="62" fill="#F3B64A"/>
-      <ellipse cx="100" cy="136" rx="42" ry="28" fill="#FFF1D6"/>
-      <!-- manchas -->
-      <ellipse cx="100" cy="58" rx="5" ry="10" fill="#8B5A2B"/>
-      <ellipse cx="84" cy="62" rx="4" ry="8" fill="#8B5A2B" transform="rotate(-15 84 62)"/>
-      <ellipse cx="116" cy="62" rx="4" ry="8" fill="#8B5A2B" transform="rotate(15 116 62)"/>
-      <ellipse cx="62" cy="76" rx="9" ry="4" fill="#8B5A2B" transform="rotate(-20 62 76)"/>
-      <ellipse cx="138" cy="76" rx="9" ry="4" fill="#8B5A2B" transform="rotate(20 138 76)"/>
-      <ellipse cx="40" cy="118" rx="10" ry="4" fill="#8B5A2B" transform="rotate(-25 40 118)"/>
-      <ellipse cx="160" cy="118" rx="10" ry="4" fill="#8B5A2B" transform="rotate(25 160 118)"/>
-      <!-- ojos -->
-      <ellipse cx="72" cy="104" rx="17" ry="19" fill="#fff"/>
-      <ellipse cx="128" cy="104" rx="17" ry="19" fill="#fff"/>
-      <circle cx="73" cy="106" r="13" fill="#5E9C4A"/>
-      <circle cx="127" cy="106" r="13" fill="#5E9C4A"/>
-      <circle cx="73" cy="107" r="9" fill="#1E1E1E"/>
-      <circle cx="127" cy="107" r="9" fill="#1E1E1E"/>
-      <circle cx="77" cy="102" r="3.5" fill="#fff"/>
-      <circle cx="131" cy="102" r="3.5" fill="#fff"/>
-      <!-- nariz y boca -->
-      <path d="M92 126 L108 126 L100 135 Z" fill="#F08A8A"/>
-      <path d="M100 135 Q100 142 90 144" stroke="#6B3E1E" stroke-width="3" fill="none" stroke-linecap="round"/>
-      <path d="M100 135 Q100 142 110 144" stroke="#6B3E1E" stroke-width="3" fill="none" stroke-linecap="round"/>
-      <path d="M90 146 Q100 158 110 146 Z" fill="#7A2E2E"/>
-      <!-- bigotes -->
-      <g stroke="#6B3E1E" stroke-width="2" stroke-linecap="round">
-        <line x1="62" y1="132" x2="30" y2="126"/><line x1="62" y1="138" x2="30" y2="142"/>
-        <line x1="138" y1="132" x2="170" y2="126"/><line x1="138" y1="138" x2="170" y2="142"/>
-      </g>
-      <!-- bufanda delantera -->
-      <path d="M44 160 Q100 190 156 160 L158 176 Q100 204 42 176 Z" fill="url(#rayas)" stroke="#6B3E1E" stroke-width="3"/>
-    </symbol>
-  </svg>
+  <!-- ============ REGISTRO DE ENTRADA ============ -->
+  <section id="registro" class="screen hidden">
+    <div class="reg-card">
+      <div class="reg-banner"><img src="assets/misty-referencia.jpg" alt="Misty, la gata guía"></div>
+      <div id="regCat" class="reg-cat"><img src="assets/misty-avatar.png" alt=""></div>
+      <h1>¡Hola! Soy Misty</h1>
+      <p class="reg-sub">Te acompaño en tu paso a secundaria. Cuéntame quién eres.</p>
+      <form id="regForm" autocomplete="off">
+        <label><span class="lab">Tu nombre</span>
+          <input id="regNombre" required maxlength="40" placeholder="Ej: Lucía"></label>
+        <label><span class="lab">Tu colegio</span>
+          <input id="regColegio" required maxlength="80" placeholder="Ej: I.E. San Agustín"></label>
+        <label><span class="lab">Tu grado</span>
+          <select id="regGrado">
+            <option value="5.° grado">5.° grado</option>
+            <option value="6.° grado">6.° grado</option>
+          </select></label>
+        <label><span class="lab">Clave de IA: OpenRouter o Gemini <small>(opcional ahora; la puedes poner luego en Configuración)</small></span>
+          <input id="regKey" type="password" placeholder="sk-or-... o AQ...."></label>
+        <button class="btn primary big" type="submit">Empezar</button>
+      </form>
+      <p class="fine">Tus datos se quedan solo en este navegador.</p>
+    </div>
+  </section>
 
-  <div class="app">
-
-    <!-- ===== SIDEBAR ===== -->
-    <aside class="sidebar">
-      <div class="logo">SYNAPS<span>3</span>DU</div>
-
-      <div class="perfil">
-        <div class="avatar"><img src="img/misti-cara.png" alt="Misti"></div>
-        <h3>Explorador(a)</h3>
-        <p>Estudiante</p>
+  <!-- ============ APP ============ -->
+  <div id="app" class="hidden">
+    <aside id="sidebar">
+      <div class="brand"><img class="brand-img" src="assets/misty-avatar.png" alt=""><span>Misty</span></div>
+      <div class="perfil-mini">
+        <img class="perfil-img" src="assets/misty-avatar.png" alt="">
+        <b id="sbNombre"></b>
+        <small id="sbGrado"></small>
       </div>
-
       <nav>
-        <p class="nav-titulo">APRENDER</p>
-        <a href="#inicio" class="activo">🏠 Inicio</a>
-        <a href="#cursos">📚 Mis cursos</a>
-        <a href="#retos">🧩 Retos</a>
-        <a href="#logros">🏆 Logros</a>
-        <a href="#areas">🎒 Áreas</a>
-
-        <p class="nav-titulo">CUENTA</p>
-        <a href="#">👤 Perfil</a>
-        <a href="#">⚙️ Ajustes</a>
-        <a href="#">💬 Ayuda</a>
+        <p class="nav-tit">Aprendizaje</p>
+        <button data-vista="inicio"><span>🏠</span>Inicio</button>
+        <button data-vista="guia"><span>🧭</span>Mi ruta</button>
+        <button data-vista="tutor"><span>💬</span>Tutor</button>
+        <button data-panel="logros"><span>🏆</span>Logros</button>
+        <button data-panel="areas"><span>📚</span>Áreas</button>
+        <button data-panel="mapa"><span>🕸️</span>Mapa de progreso</button>
+        <p class="nav-tit">Cuenta</p>
+        <button data-panel="perfil"><span>👤</span>Perfil</button>
+        <button data-panel="accesorios"><span>🧢</span>Accesorios</button>
+        <button data-panel="reporte"><span>📄</span>Reporte</button>
+        <button data-panel="config"><span>⚙️</span>Configuración</button>
       </nav>
-
-      <a href="#" class="salir">🚪 Salir</a>
     </aside>
 
-    <!-- ===== CONTENIDO PRINCIPAL ===== -->
-    <main class="principal">
-
-      <header class="barra" id="inicio">
-        <h2>Panel</h2>
-        <input type="search" placeholder="🔍 Buscar un tema...">
-      </header>
-
-      <!-- Saludo + Misti -->
-      <section class="saludo">
-        <h1>¡Hola, explorador!</h1>
-        <div class="misti-mini"><img src="img/misti-cara.png" alt="Misti"></div>
-        <div class="burbuja">¡Llevas <b>5 días</b> seguidos! 🔥 Soy <b>Misti</b> y hoy aprendemos juntos.</div>
+    <main id="main">
+      <section id="stage">
+        <svg id="escena" viewBox="0 0 400 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs>
+            <linearGradient id="cielo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fbdf2"/><stop offset=".65" stop-color="#cfe8fb"/><stop offset="1" stop-color="#f4f9ff"/></linearGradient>
+            <linearGradient id="volcan" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8a9cc2"/><stop offset="1" stop-color="#b7c6e0"/></linearGradient>
+          </defs>
+          <rect width="400" height="600" fill="url(#cielo)"/>
+          <circle cx="330" cy="90" r="34" fill="#fff6c9" opacity=".85"/>
+          <g fill="#fff" opacity=".9"><ellipse cx="90" cy="110" rx="46" ry="14"/><ellipse cx="122" cy="100" rx="30" ry="14"/><ellipse cx="300" cy="190" rx="52" ry="13"/><ellipse cx="270" cy="182" rx="26" ry="12"/></g>
+          <path d="M-20 400 L70 300 L120 340 L170 290 L230 400Z" fill="#a9bbdb"/>
+          <path d="M120 400 L250 205 L300 250 L330 235 L440 400Z" fill="url(#volcan)"/>
+          <path d="M250 205 L222 247 L240 242 L252 262 L266 240 L284 250 L300 250Z" fill="#fff"/>
+          <path d="M-20 430 Q100 380 220 420 T430 410 L430 600 L-20 600Z" fill="#cfe7c4"/>
+          <rect x="0" y="470" width="400" height="130" fill="#f1e6cf"/>
+          <g fill="#d9c7a0"><path d="M10 470 v-40 a30 30 0 0 1 60 0 v40z"/><path d="M110 470 v-52 a36 36 0 0 1 72 0 v52z"/><path d="M230 470 v-40 a30 30 0 0 1 60 0 v40z"/><path d="M330 470 v-52 a36 36 0 0 1 72 0 v52z"/></g>
+          <g fill="#f8f1e0"><path d="M18 470 v-36 a22 22 0 0 1 44 0 v36z"/><path d="M120 470 v-48 a26 26 0 0 1 52 0 v48z"/><path d="M238 470 v-36 a22 22 0 0 1 44 0 v36z"/><path d="M340 470 v-48 a26 26 0 0 1 52 0 v48z"/></g>
+          <rect x="0" y="470" width="400" height="8" fill="#c9b78c"/>
+        </svg>
+        <div id="stageCat"></div>
+        <div id="floatLayer"></div>
       </section>
 
-      <!-- Estadísticas -->
-      <section class="stats">
-        <div class="stat amarillo"><strong>1 320 XP</strong><span>Puntos</span><i>⭐</i></div>
-        <div class="stat azul"><strong>Aprendiz</strong><span>Tu nivel</span><i>💎</i></div>
-        <div class="stat naranja"><strong>5 días</strong><span>Racha</span><i>🔥</i></div>
-        <div class="stat rosa"><strong>#4</strong><span>Puesto</span><i>🏅</i></div>
-      </section>
-
-      <!-- Selector de grado (solo CSS) -->
-      <section class="grados" id="cursos">
-        <input type="radio" name="grado" id="g4" checked>
-        <input type="radio" name="grado" id="g5">
-        <input type="radio" name="grado" id="g6">
-
-        <div class="tabs">
-          <label for="g4">4° grado</label>
-          <label for="g5">5° grado</label>
-          <label for="g6">6° grado</label>
-        </div>
-
-        <div class="paneles">
-
-          <!-- 4° -->
-          <div class="panel p4">
-            <div class="tablero">
-              <div class="tablero-top">
-                <span class="volver">←</span>
-                <h3>Matemática · 4° grado</h3>
-              </div>
-              <div class="continuar">
-                <span class="ico">✖️</span>
-                <span>Multiplicación</span>
-                <a href="#" class="btn-amarillo">Continuar aventura →</a>
-              </div>
-              <p class="cap-titulo">Capítulos</p>
-              <div class="capitulos">
-                <a href="#" class="cap morado"><h4>Suma</h4><b>+</b></a>
-                <a href="#" class="cap verde"><h4>Resta</h4><b>−</b></a>
-                <a href="#" class="cap rosado"><h4>Multiplicación</h4><b>×</b></a>
-                <a href="#" class="cap celeste"><h4>División</h4><b>÷</b></a>
-                <a href="#" class="cap turquesa"><h4>Fracciones</h4><b>½</b></a>
-              </div>
-            </div>
-            <div class="progreso">
-              <div class="prog-item"><span>Módulo 3 de 5</span><div class="barra-prog"><i style="width:60%"></i></div><small>60% completado</small></div>
-              <div class="prog-item"><span>Progreso total</span><div class="barra-prog"><i style="width:45%"></i></div><small>45% completado</small></div>
-            </div>
+      <section id="content">
+        <header id="topbar">
+          <button id="menuBtn" class="icon-btn" aria-label="Menú">☰</button>
+          <div id="modoSwitch" role="group" aria-label="Vista">
+            <button data-vista="inicio" aria-pressed="true">🏠 Inicio</button>
+            <button data-vista="guia" data-modo="guia" aria-pressed="false">🧭 Guía</button>
+            <button data-vista="tutor" data-modo="tutor" aria-pressed="false">🎓 Tutor</button>
           </div>
-
-          <!-- 5° -->
-          <div class="panel p5">
-            <div class="tablero">
-              <div class="tablero-top">
-                <span class="volver">←</span>
-                <h3>Matemática · 5° grado</h3>
-              </div>
-              <div class="continuar">
-                <span class="ico">🔢</span>
-                <span>Decimales</span>
-                <a href="#" class="btn-amarillo">Continuar aventura →</a>
-              </div>
-              <p class="cap-titulo">Capítulos</p>
-              <div class="capitulos">
-                <a href="#" class="cap morado"><h4>Fracciones</h4><b>¾</b></a>
-                <a href="#" class="cap verde"><h4>Decimales</h4><b>0,5</b></a>
-                <a href="#" class="cap rosado"><h4>Geometría</h4><b>△</b></a>
-                <a href="#" class="cap celeste"><h4>Medidas</h4><b>📏</b></a>
-                <a href="#" class="cap turquesa"><h4>Estadística</h4><b>📊</b></a>
-              </div>
-            </div>
-            <div class="progreso">
-              <div class="prog-item"><span>Módulo 2 de 5</span><div class="barra-prog"><i style="width:40%"></i></div><small>40% completado</small></div>
-              <div class="prog-item"><span>Progreso total</span><div class="barra-prog"><i style="width:30%"></i></div><small>30% completado</small></div>
-            </div>
+          <div id="hud">
+            <span id="hudNivel" class="pill">Nivel 1</span>
+            <div class="bar" title="Progreso al siguiente nivel"><div id="hudBarra"></div></div>
+            <span id="hudPts" class="hud-pts">0 pts</span>
+            <span id="hudRacha" class="pill racha" title="Días seguidos">🔥 0</span>
           </div>
+        </header>
 
-          <!-- 6° -->
-          <div class="panel p6">
-            <div class="tablero">
-              <div class="tablero-top">
-                <span class="volver">←</span>
-                <h3>Matemática · 6° grado</h3>
+        <div id="vistaInicio" class="vista"></div>
+
+        <div id="vistaAprender" class="vista">
+          <section id="panel">
+            <div id="rutaPanel" class="ruta hidden">
+              <div class="ruta-head">
+                <select id="rutaSel" aria-label="Mis rutas"></select>
+                <span id="rutaArea" class="badge"></span>
               </div>
-              <div class="continuar">
-                <span class="ico">%</span>
-                <span>Porcentajes</span>
-                <a href="#" class="btn-amarillo">Continuar aventura →</a>
-              </div>
-              <p class="cap-titulo">Capítulos</p>
-              <div class="capitulos">
-                <a href="#" class="cap morado"><h4>Porcentajes</h4><b>%</b></a>
-                <a href="#" class="cap verde"><h4>Proporciones</h4><b>⚖️</b></a>
-                <a href="#" class="cap rosado"><h4>Potencias</h4><b>x²</b></a>
-                <a href="#" class="cap celeste"><h4>Área y volumen</h4><b>🧊</b></a>
-                <a href="#" class="cap turquesa"><h4>Probabilidad</h4><b>🎲</b></a>
-              </div>
+              <div id="rutaNodos" class="ruta-nodos"></div>
             </div>
-            <div class="progreso">
-              <div class="prog-item"><span>Módulo 1 de 5</span><div class="barra-prog"><i style="width:20%"></i></div><small>20% completado</small></div>
-              <div class="prog-item"><span>Progreso total</span><div class="barra-prog"><i style="width:15%"></i></div><small>15% completado</small></div>
+            <div id="chatLog" aria-live="polite"></div>
+          </section>
+
+          <form id="chatBar" autocomplete="off">
+            <div id="fotoPrev" class="foto-prev hidden"></div>
+            <div class="bar-row">
+              <div class="input-pill">
+                <button type="button" id="btnFoto" class="icon-btn flat" title="Subir foto del cuaderno" aria-label="Subir foto">📷</button>
+                <input id="fotoInput" type="file" accept="image/*" hidden>
+                <input id="chatInput" type="text" maxlength="600" placeholder="Escribe aquí…" aria-label="Mensaje">
+                <button type="button" id="btnMic" class="icon-btn flat" title="Hablar" aria-label="Micrófono">🎤</button>
+              </div>
+              <button type="submit" id="btnEnviar" class="btn primary send" aria-label="Enviar">➤</button>
             </div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- Reto + Eficiencia -->
-      <section class="fila2" id="retos">
-        <div class="tarjeta reto">
-          <h3>Reto de hoy</h3>
-          <p>Resuelve 5 problemas y gana <b>+50 XP</b></p>
-          <div class="reto-cuerpo">
-            <div class="misti-reto"><img src="img/misti-cara.png" alt="Misti"></div>
-            <a href="#" class="play">▶</a>
-            <span class="pieza">🧩</span>
-          </div>
-          <small class="chip">Se actualiza cada día</small>
-        </div>
-
-        <div class="tarjeta eficiencia">
-          <h3>Mi aprendizaje</h3>
-          <div class="ef-cuerpo">
-            <ul>
-              <li><i class="p1"></i> Aciertos en quizzes</li>
-              <li><i class="p2"></i> Práctica activa</li>
-              <li><i class="p3"></i> Tareas pendientes</li>
-            </ul>
-            <div class="anillo"><span>73%</span></div>
-          </div>
-          <small>Esta semana: +10% de aciertos · 5 días activos</small>
-        </div>
-      </section>
-
-      <!-- Áreas curriculares -->
-      <section id="areas">
-        <h2 class="sub">Áreas para explorar</h2>
-        <div class="areas">
-          <a href="#" class="area a1"><span>📖</span><h4>Comunicación</h4><p>Lectura, escritura y oralidad</p></a>
-          <a href="#" class="area a2"><span>🔬</span><h4>Ciencia y Tecnología</h4><p>Experimentos y naturaleza</p></a>
-          <a href="#" class="area a3"><span>🗺️</span><h4>Personal Social</h4><p>Historia y geografía del Perú</p></a>
-          <a href="#" class="area a4"><span>🎨</span><h4>Arte y Cultura</h4><p>Música, dibujo y danza</p></a>
+          </form>
         </div>
       </section>
     </main>
-
-    <!-- ===== COLUMNA DERECHA ===== -->
-    <aside class="derecha" id="logros">
-
-      <div class="tarjeta calendario">
-        <div class="cal-top"><h3>Actividad mensual</h3><span>Noviembre</span></div>
-        <div class="dias-sem"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
-        <div class="dias">
-          <span></span><span></span><span></span><span></span><span></span><span></span>
-          <span class="ok">1</span><span class="ok">2</span><span>3</span><span class="ok">4</span><span class="hoy">5</span>
-          <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
-          <span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span>
-          <span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span>
-          <span>27</span><span>28</span><span>29</span><span>30</span>
-        </div>
-        <div class="leyenda"><span><i class="lo"></i> Estudiado</span><span><i class="lh"></i> Hoy</span></div>
-      </div>
-
-      <div class="tarjeta ranking">
-        <h3>Tabla de campeones</h3>
-        <p class="mini">Los mejores de la semana</p>
-        <div class="podio">
-          <div class="puesto p-2"><div class="cara">🦙</div><b>2</b><small>Lucía</small></div>
-          <div class="puesto p-1"><div class="cara">🦅</div><b>1</b><small>Mateo</small></div>
-          <div class="puesto p-3"><div class="cara">🐸</div><b>3</b><small>Ana</small></div>
-        </div>
-        <ul class="lista">
-          <li><span>4</span> Tú <em>1 320 XP</em></li>
-          <li><span>5</span> Diego <em>1 280 XP</em></li>
-          <li><span>6</span> Valeria <em>1 150 XP</em></li>
-        </ul>
-      </div>
-
-      <div class="tarjeta consejo">
-        <div class="misti-consejo"><img src="img/misti-cara.png" alt="Misti"></div>
-        <div>
-          <h4>Consejo de Misti</h4>
-          <p>Estudia 20 minutos, descansa 5 y vuelve. ¡Tu cerebro lo agradecerá! 🧠</p>
-        </div>
-      </div>
-    </aside>
-
   </div>
 
-  <!-- ===== MISTI FLOTANTE ===== -->
-  <div class="misti-flotante" id="mistiFlotante">
-    <div class="misti-globo" id="mistiGlobo">¡Hola! Soy <b>Misti</b> 🐾<br>Tócame para escucharme</div>
-    <button class="misti-btn" id="mistiBtn" aria-label="Hablar con Misti">
-      <img src="img/misti-saluda.png" alt="Misti saludando">
-      <span class="misti-onda"></span>
-    </button>
-    <button class="misti-cerrar" id="mistiCerrar" aria-label="Ocultar a Misti">✕</button>
+  <!-- ============ HOJA DE LECCIÓN ============ -->
+  <div id="hoja" class="hoja hidden" role="dialog" aria-modal="true" aria-label="Lección">
+    <div id="hojaBox" class="hoja-box"></div>
   </div>
 
-  <script src="script.js"></script>
+  <!-- ============ MODAL ============ -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box">
+      <header><h2 id="modalTitle"></h2><button id="modalClose" class="icon-btn flat" aria-label="Cerrar">✕</button></header>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Three.js local (vendor/). Si falta, Misty usa su versión 2D automáticamente. -->
+  <script src="vendor/three.min.js"></script>
+  <script src="js/curriculum.js"></script>
+  <script src="js/cat.js"></script>
+  <script src="js/ai.js"></script>
+  <script src="js/voice.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
