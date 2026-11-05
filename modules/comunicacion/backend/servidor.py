@@ -110,6 +110,12 @@ class MistiHandler(SimpleHTTPRequestHandler):
         if any(lower.startswith(x) for x in protected) or '/..' in lower or '\\' in lower:
             self.send_error(404, 'No disponible')
             return
+        target = Path(self.translate_path(self.path)).resolve()
+        relative = target.relative_to(ROOT) if target.is_relative_to(ROOT) else None
+        if relative is None or any(part.startswith('.') for part in relative.parts) or any(
+            str(relative).replace('\\', '/').startswith(x) for x in
+            ('modules/comunicacion/backend', 'modules/comunicacion/generador', 'modules/comunicacion/data/plantillas_actividades.json')):
+            return self.send_error(404, 'No disponible')
         return super().do_GET()
 
     def do_HEAD(self):

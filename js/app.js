@@ -48,7 +48,7 @@
       S = Object.assign({}, b, d);
       S.config = Object.assign({}, b.config, d.config);
       S.config.key=""; S.config.keyGemini="";
-      localStorage.setItem(LS_KEY, JSON.stringify(S));
+
       S.stats = Object.assign({}, b.stats, d.stats);
       S.puntos = Object.assign({}, b.puntos, d.puntos);
       S.racha = Object.assign({}, b.racha, d.racha);
@@ -56,6 +56,7 @@
       S.hoy = Object.assign({}, b.hoy, d.hoy);
       S.accesorios = Object.assign({}, b.accesorios, d.accesorios);
       S.accesorios.equipped = Object.assign({}, b.accesorios.equipped, (d.accesorios || {}).equipped);
+      guardar();
     } catch (e) { console.warn("[Misty] no pude leer los datos guardados:", e); }
   }
   let avisoCuota = false;
@@ -285,6 +286,7 @@
         messages: MistyAI.mensajesClasificar(textoEst || "(foto de un ejercicio)", respuesta) });
       const j = MistyAI.extractJSON(txt);
       c = MistyCurr.normalizar(j.area, j.competencia);
+      guardar();
     } catch (e) { console.warn("[Misty] la clasificación falló:", e.message); }
     if (!c) c = MistyCurr.adivinar((textoEst || "") + " " + respuesta);
     sumarPuntos(pts, c && c.area, c && c.competencia);
@@ -353,7 +355,7 @@
       guardar();
       revisarReto();
       animo("happy", 1500);
-      clasificarYSumar(texto, respuesta, PUNTOS.consulta);   // segunda llamada corta: ¿qué se trabajó?
+      if (!respuesta.startsWith("Modo de respaldo sin IA.")) clasificarYSumar(texto, respuesta, PUNTOS.consulta);   // segunda llamada corta: ¿qué se trabajó?
     } catch (e) {
       espera.remove();
       if (e.name === "AbortError") {
@@ -541,13 +543,18 @@
     b.title = r.cofre ? "Cofre abierto" : listo ? "¡Abre tu cofre!" : "Se abre al completar el paso " + (tras + 1);
     b.disabled = !listo || !!r.cofre;
     b.onclick = () => {
+      if (r.cofre) return;
       r.cofre = true;
       guardar();
       renderRuta();
       if (gato) { gato.jump(); gato.wave(2200); }
       animo("happy", 1800);
-      toast("¡Cofre abierto! +15 pts 🎁", "logro");
-      sumarPuntos(15, r.area, r.competencia);
+      if (r.nodos.some(n => n.comunicacionId)) {
+        toast("¡Cofre abierto! Tus puntos ya se registraron por actividad.", "logro");
+      } else {
+        toast("¡Cofre abierto! +15 pts 🎁", "logro");
+        sumarPuntos(15, r.area, r.competencia);
+      }
     };
     w.append(b);
     fila.append(w);
@@ -676,7 +683,11 @@
 
 
   let comunicacionActual = null;
-  window.mistiContext = () => ({grado: parseInt(S.perfil?.grado || '4'), id:comunicacionActual || ''});
+  window.mistiContext = () => {
+    const r=rutaActual();
+    const id=r?.nodos.some(n=>n.comunicacionId===comunicacionActual) ? comunicacionActual : r?.nodos.find(n=>n.estado==='activo')?.comunicacionId;
+    return {grado:r?.grado || parseInt(S.perfil?.grado || '4'), id:id || ''};
+  };
   async function apiCom(path, body) {
     const res=await fetch('/api/misti/'+path, body ? {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)} : {});
     const data=await res.json(); if(!res.ok) throw Error(data.error || 'No se pudo conectar'); return data;
@@ -701,6 +712,7 @@
     c.append(el('h3','',n.titulo),pEl(n.leccion,'leccion'),pEl(n.pregunta,'pregunta'));
     const {cont,btns}=opcionesUI(n), fb=el('div','feedback'), acc=el('div','acciones');c.append(cont,fb,acc);
     let busy=false,nivel=0;
+    if(n.estado==='hecho'){btns.forEach(b=>b.disabled=true);fb.textContent='Actividad completada. No concede puntos adicionales.';}
     const hint=el('button','btn','Pista');hint.onclick=async()=>{if(busy)return;busy=true;try{const d=await apiCom('pista?id='+encodeURIComponent(n.comunicacionId)+'&nivel='+Math.min(2,++nivel));fb.textContent=d.pista;addMsg('misty',d.pista);decir(d.pista);}catch(e){fb.textContent=e.message;}finally{busy=false;}};acc.append(hint);
     const ayuda=el('button','btn','Preguntar a Misti');ayuda.onclick=()=>{finHoja();setModo('tutor');addMsg('misty','Cuéntame qué parte del texto te cuesta. Puedes volver al paso desde Mi ruta.');};acc.append(ayuda);
     btns.forEach((b,k)=>b.onclick=async()=>{
@@ -709,7 +721,7 @@
         const d=await apiCom('responder',{id:n.comunicacionId,opcion:k});
         S.comIntentos=S.comIntentos||[];S.comIntentos.push({id:n.comunicacionId,opcion:k,correcta:d.correcta,fecha:Date.now()});S.comIntentos=S.comIntentos.slice(-500);guardar();
         fb.textContent=d.mensaje;addMsg('misty',d.mensaje);decir(d.mensaje);animo(d.correcta?'happy':'sad',1500);
-        if(d.correcta){
+        if(d.correcta && n.estado!=='hecho'){
           S.comPremios=S.comPremios||{};
           if(!S.comPremios[n.comunicacionId]){S.comPremios[n.comunicacionId]=true;completarNodo(r,i);}else{n.estado='hecho';if(r.nodos[i+1])r.nodos[i+1].estado='activo';r.completada=r.nodos.every(x=>x.estado==='hecho');guardar();renderRuta();}
           btns.forEach(x=>x.disabled=true);if(gato)gato.jump();

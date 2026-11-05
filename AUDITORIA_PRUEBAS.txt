@@ -1,0 +1,117 @@
+test_01_estado_local (test_servicio.TestHTTP.test_01_estado_local) ... 127.0.0.1 - - [05/Nov/2026 12:51:16] "GET /api/misti/estado HTTP/1.1" 200 -
+ok
+test_02_variedad_por_grado (test_servicio.TestHTTP.test_02_variedad_por_grado) ... 127.0.0.1 - - [05/Nov/2026 12:51:16] "GET /api/misti/catalogo?grado=4 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "GET /api/misti/catalogo?grado=5 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "GET /api/misti/catalogo?grado=6 HTTP/1.1" 200 -
+ok
+test_03_no_entregar_clave_correccion (test_servicio.TestHTTP.test_03_no_entregar_clave_correccion) ... 127.0.0.1 - - [05/Nov/2026 12:51:16] "GET /api/misti/actividad?grado=4&capacidad=L2 HTTP/1.1" 200 -
+ok
+test_04_pista_y_correccion_una_unica_respuesta (test_servicio.TestHTTP.test_04_pista_y_correccion_una_unica_respuesta) ... 127.0.0.1 - - [05/Nov/2026 12:51:16] "GET /api/misti/actividad?grado=6&capacidad=L2 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "GET /api/misti/pista?id=DEMO-L2-6-6&nivel=1 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "POST /api/misti/responder HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "POST /api/misti/responder HTTP/1.1" 200 -
+ok
+test_05_bloquea_archivos_editoriales (test_servicio.TestHTTP.test_05_bloquea_archivos_editoriales) ... 127.0.0.1 - - [05/Nov/2026 12:51:16] code 404, message No disponible
+127.0.0.1 - - [05/Nov/2026 12:51:16] "GET /modules/comunicacion/backend/data/muestras_l2.json HTTP/1.1" 404 -
+ok
+test_06_interfaz_servible (test_servicio.TestHTTP.test_06_interfaz_servible) ... 127.0.0.1 - - [05/Nov/2026 12:51:16] "GET /modules/comunicacion/ui/ HTTP/1.1" 302 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "GET / HTTP/1.1" 200 -
+ok
+test_07_rechaza_grado_invalido_y_json_text_plain (test_servicio.TestHTTP.test_07_rechaza_grado_invalido_y_json_text_plain) ... 127.0.0.1 - - [05/Nov/2026 12:51:16] "GET /api/misti/actividad?grado=9 HTTP/1.1" 400 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "POST /api/misti/responder HTTP/1.1" 415 -
+ok
+test_08_modo_sin_muestras_no_publica_borradores (test_servicio.TestHTTP.test_08_modo_sin_muestras_no_publica_borradores) ... ok
+test_09_no_publica_sin_revision (test_servicio.TestRevision.test_09_no_publica_sin_revision) ... ok
+test_caida (test_tutor.TutorTests.test_caida) ... ok
+test_invalido (test_tutor.TutorTests.test_invalido) ... ok
+test_proveedor (test_tutor.TutorTests.test_proveedor) ... ok
+test_sin_clave (test_tutor.TutorTests.test_sin_clave) ... ok
+test_correccion_todos_grados (test_unificado.HTTPAudit.test_correccion_todos_grados) ... 127.0.0.1 - - [05/Nov/2026 12:51:16] "POST /api/misti/responder HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "POST /api/misti/responder HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "POST /api/misti/responder HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "GET /api/misti/pista?id=DEMO-L2-4-A&nivel=1 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "GET /api/misti/pista?id=DEMO-L2-4-A&nivel=2 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "POST /api/misti/responder HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "POST /api/misti/responder HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "POST /api/misti/responder HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "GET /api/misti/pista?id=DEMO-L2-4-2&nivel=1 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "GET /api/misti/pista?id=DEMO-L2-4-2&nivel=2 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "POST /api/misti/responder HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "POST /api/misti/responder HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "POST /api/misti/responder HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "GET /api/misti/pista?id=DEMO-L2-4-3&nivel=1 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "GET /api/misti/pista?id=DEMO-L2-4-3&nivel=2 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "POST /api/misti/responder HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "POST /api/misti/responder HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "POST /api/misti/responder HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "GET /api/misti/pista?id=DEMO-L2-5-A&nivel=1 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "GET /api/misti/pista?id=DEMO-L2-5-A&nivel=2 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "POST /api/misti/responder HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "POST /api/misti/responder HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "POST /api/misti/responder HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "GET /api/misti/pista?id=DEMO-L2-5-4&nivel=1 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "GET /api/misti/pista?id=DEMO-L2-5-4&nivel=2 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "POST /api/misti/responder HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "POST /api/misti/responder HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "POST /api/misti/responder HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "GET /api/misti/pista?id=DEMO-L2-5-5&nivel=1 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "GET /api/misti/pista?id=DEMO-L2-5-5&nivel=2 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "POST /api/misti/responder HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "POST /api/misti/responder HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "POST /api/misti/responder HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "GET /api/misti/pista?id=DEMO-L2-6-A&nivel=1 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "GET /api/misti/pista?id=DEMO-L2-6-A&nivel=2 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "POST /api/misti/responder HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "POST /api/misti/responder HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "POST /api/misti/responder HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "GET /api/misti/pista?id=DEMO-L2-6-6&nivel=1 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "GET /api/misti/pista?id=DEMO-L2-6-6&nivel=2 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "POST /api/misti/responder HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "POST /api/misti/responder HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "POST /api/misti/responder HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "GET /api/misti/pista?id=DEMO-L2-6-7&nivel=1 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 12:51:16] "GET /api/misti/pista?id=DEMO-L2-6-7&nivel=2 HTTP/1.1" 200 -
+ok
+test_normalizacion_no_expone_backend (test_unificado.HTTPAudit.test_normalizacion_no_expone_backend) ... 127.0.0.1 - - [05/Nov/2026 12:51:17] code 404, message No disponible
+127.0.0.1 - - [05/Nov/2026 12:51:17] "GET /foo/../modules/comunicacion/backend/tutor.py HTTP/1.1" 404 -
+ok
+test_contrato_grados (test_unificado.Unificado.test_contrato_grados) ... ok
+test_contrato_real_simulado (test_unificado.Unificado.test_contrato_real_simulado) ... ok
+test_formato_invalido (test_unificado.Unificado.test_formato_invalido) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 1.699s
+
+OK
+test_alternativas_duplicadas_se_rechazan (test_generador.TestMistiGenerador.test_alternativas_duplicadas_se_rechazan) ... ok
+test_ejemplos_offline_validos (test_generador.TestMistiGenerador.test_ejemplos_offline_validos) ... ok
+test_escritura_abierta_necesita_rubrica (test_generador.TestMistiGenerador.test_escritura_abierta_necesita_rubrica) ... ok
+test_escucha_no_finge_audio (test_generador.TestMistiGenerador.test_escucha_no_finge_audio) ... ok
+test_evidencia_inventada_se_rechaza (test_generador.TestMistiGenerador.test_evidencia_inventada_se_rechaza) ... ok
+test_todas_las_capacidades_tienen_plantilla (test_generador.TestMistiGenerador.test_todas_las_capacidades_tienen_plantilla) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.002s
+
+OK
+✔ 15 misiones: un mundo por cada grado y 3 modalidades adicionales (2.011372ms)
+✔ cada misión apunta a capacidad curricular real (0.401544ms)
+✔ audios existen y son WAV auténticos (1.498544ms)
+✔ preguntas cerradas con opciones correctas y diferencias (0.173426ms)
+✔ bloqueos de misiones y desbloqueo sin editar master (1.468089ms)
+✔ XP no se repite si el estudiante rehace la misión (0.360162ms)
+✔ racha cuenta días distintos consecutivos y se corta en huecos (0.298922ms)
+✔ guion oral no se registra como capacidad demostrada (0.429865ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 111.563401
+PASS: grados 4/5/6, contexto tras recarga, puntos y marcas persistidos, claves excluidas
+PASS: chat real adapter uses backend and no credentials
+PASS: cofres Comunicación sin XP repetible; Matemática +15 una vez
+PASS: grados 4/5/6, contexto tras recarga, puntos y marcas persistidos, claves excluidas
+PASS: chat real adapter uses backend and no credentials
