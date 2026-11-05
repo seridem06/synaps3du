@@ -1,0 +1,123 @@
+{
+  "nota": "Ejemplos originales redactados manualmente. La validación técnica no equivale a revisión docente.",
+  "actividades": [
+    {
+      "id": "DEMO-L2-4-A",
+      "plantilla_id": "COM-L2-infiere_intenciones",
+      "grado": 4,
+      "tipo": "seleccion",
+      "titulo": "La caja del salón",
+      "texto_base": "Durante el recreo, Tomás vio cuadernos tirados cerca de la puerta. Los recogió y los colocó en una caja para que nadie tropezara.",
+      "pregunta": "¿Por qué Tomás guardó los cuadernos en una caja?",
+      "opciones": [
+        "Para evitar que alguien tropezara",
+        "Para llevarlos a su casa",
+        "Para impedir que los usaran"
+      ],
+      "respuesta_correcta_indice": 0,
+      "cita_evidencia": "para que nadie tropezara",
+      "pistas": [
+        "Fíjate en qué peligro podía ocurrir cerca de la puerta.",
+        "Relee la última parte del relato."
+      ]
+    },
+    {
+      "id": "DEMO-L2-5-A",
+      "plantilla_id": "COM-L2-infiere_intenciones",
+      "grado": 5,
+      "tipo": "seleccion",
+      "titulo": "Cartel de la biblioteca",
+      "texto_base": "El equipo de aula vio que algunos libros se devolvían tarde. Colocó un cartel con recordatorios junto a la puerta y ofreció marcadores con la fecha de entrega.",
+      "pregunta": "¿Qué buscaba lograr el equipo de aula?",
+      "opciones": [
+        "Que nadie leyera libros",
+        "Que los libros fueran devueltos a tiempo",
+        "Que la biblioteca cerrara antes"
+      ],
+      "respuesta_correcta_indice": 1,
+      "cita_evidencia": "algunos libros se devolvían tarde",
+      "pistas": [
+        "Identifica el problema inicial.",
+        "Relaciona el cartel y los marcadores con la fecha de entrega."
+      ]
+    },
+    {
+      "id": "DEMO-L2-6-A",
+      "plantilla_id": "COM-L2-infiere_intenciones",
+      "grado": 6,
+      "tipo": "seleccion",
+      "titulo": "La asamblea",
+      "texto_base": "Antes de proponer un nuevo horario para los talleres, la delegada conversó con estudiantes de diferentes grados y anotó sus sugerencias. Quería presentar una propuesta que tomara en cuenta varias necesidades.",
+      "pregunta": "¿Por qué la delegada recogió distintas opiniones?",
+      "opciones": [
+        "Para presentar una propuesta representativa",
+        "Para evitar que hubiera talleres",
+        "Para elegir solo su propia preferencia"
+      ],
+      "respuesta_correcta_indice": 0,
+      "cita_evidencia": "tomara en cuenta varias necesidades",
+      "pistas": [
+        "Observa qué hizo antes de presentar la propuesta.",
+        "Identifica qué quería tener en cuenta."
+      ]
+    },
+    {
+      "id": "DEMO-L1-4-A",
+      "plantilla_id": "COM-L1-localiza_informacion",
+      "grado": 4,
+      "tipo": "seleccion",
+      "titulo": "Anuncio de la feria",
+      "texto_base": "FERIA DEL LIBRO ESCOLAR. Lugar: patio central. Día: viernes. Hora: 10 de la mañana. Invita: el club de lectura.",
+      "pregunta": "¿Dónde se realizará la feria?",
+      "opciones": [
+        "En el patio central",
+        "En el parque municipal",
+        "En el laboratorio"
+      ],
+      "respuesta_correcta_indice": 0,
+      "cita_evidencia": "Lugar: patio central",
+      "pistas": [
+        "Busca la palabra Lugar.",
+        "Observa el renglón donde aparece la ubicación."
+      ]
+    },
+    {
+      "id": "DEMO-E2-4-A",
+      "plantilla_id": "COM-E2-organiza_relato",
+      "grado": 4,
+      "tipo": "escritura",
+      "titulo": "Una sorpresa en el recreo",
+      "consigna": "Escribe un relato breve sobre un objeto misterioso que aparece en el patio. Organiza qué sucedió al inicio, qué pasó después y cómo terminó. No compartas datos reales tuyos.",
+      "criterios_rubrica": [
+        "El relato tiene un inicio que presenta la situación.",
+        "Los hechos siguen un orden comprensible.",
+        "El cierre se relaciona con lo ocurrido."
+      ],
+      "pistas": [
+        "Empieza contando quién encuentra el objeto y dónde.",
+        "Piensa qué problema ocurre y cómo podría resolverse."
+      ]
+    },
+    {
+      "id": "DEMO-O1-4-A",
+      "plantilla_id": "COM-O1-escucha_datos",
+      "grado": 4,
+      "tipo": "escucha",
+      "titulo": "Aviso escolar de reciclaje",
+      "guion_audio": "Atención, estudiantes. El jueves a las nueve de la mañana recogeremos papel usado en el patio. Traigan hojas limpias que ya no necesiten.",
+      "audio_disponible": false,
+      "pregunta": "¿Qué día será la recolección?",
+      "opciones": [
+        "El martes",
+        "El jueves",
+        "El sábado"
+      ],
+      "respuesta_correcta_indice": 1,
+      "cita_evidencia": "El jueves a las nueve de la mañana",
+      "pistas": [
+        "Escucha la parte que menciona el día.",
+        "Presta atención a la frase que comienza con El..."
+      ]
+    }
+  ]
+}
